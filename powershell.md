@@ -67,13 +67,17 @@ Le préfixe de **cmdlet** est appelé verbe car il détermine l’action à effe
 
   Exemple:
   
-  ![Read-Host test](test-de-read-host-khoziu2y.jpg)
+  ![Read-Host test](./test_de_Read-Host.jpg)
   
   `$val` est une variable.
   
-  On lui assigne une valeur qui est ce que l'utilisateur va rentrer.
+  On lui assigne une valeur qui est une chaine de caractère que l'utilisateur va rentrer.
   
-  Pour ce faire, on utilise la commande `Read-Host` et on met
+  Pour ce faire, on utilise la commande `Read-Host` (avec lequel on peut rajouter une *"phrase d'introduction"*)
+
+  A la suite de ça, on peut entrer la valeur de la chaine de caractère que l'on veut mettre dans `$val`.
+
+  Les dernières lignes permettent de vérifier que `$val` à bien la valeur entrer précédemment.
 
 
 
