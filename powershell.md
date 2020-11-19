@@ -79,5 +79,7 @@ Le préfixe de **cmdlet** est appelé verbe car il détermine l’action à effe
 
   Les dernières lignes permettent de vérifier que `$val` à bien la valeur entrer précédemment.
 
+- ``
+
 
 
