@@ -67,7 +67,7 @@ Le préfixe de **cmdlet** est appelé verbe car il détermine l’action à effe
 
   Exemple:
   
-  ![Read-Host test](./test_de_Read-Host.jpg)
+  ![Read-Host image](./Ressources/test_de_Read-Host.jpg)
   
   `$val` est une variable.
   
