@@ -1,4 +1,4 @@
-[quetcequeleshelltest](./intro_shell.md#quest-ce-que-le-shell-?) 
+[quetcequeleshelltest](./intro_shell.md#quest-ce-que-le-shell-) 
 
 # Introduction au Shell
 
