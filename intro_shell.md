@@ -2,6 +2,8 @@
 
 # Introduction au Shell
 
+-------------
+
 ## Qu'est-ce que le Shell ?
 
 Le **Shell** est nommé l'**interface système** ou **coque logicielle**(= shell en anglais).
@@ -44,6 +46,12 @@ Le **sh** est installé sur tous les OS basés sur UNIX. Mais il montre des limi
 Par conséquent, aujourd'hui le shell le plus utilisé est le **bash** (sûrement car c'est le shell créé par GNU). Il est installé par défaut sur beaucoup de distribution Linux.
 
 Mais pas sur toutes et donc certaines reste soit en **sh** par défaut ou soit avec d'autres shells comme **ksh**.
+
+-----------
+
+### Histoire du Shell
+
+
 
 
 

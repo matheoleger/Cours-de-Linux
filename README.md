@@ -13,6 +13,8 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
 ## Sommaire
 
 - [Introduction au Shell](./intro_shell.md)
+    - [Qu'est-ce que le Shell ?](./intro_shell.md#quest-ce-que-le-shell-) 
+    - [Histoire du Shell](./intro_shell.md#histoire-du-shell)
 - Premier Script
 - Commande principale du bash
 
