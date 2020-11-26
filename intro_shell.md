@@ -1,3 +1,5 @@
+[quetcequeleshelltest](#qu'est-ce-que-le-shell-?) 
+
 # Introduction au Shell
 
 ## Qu'est-ce que le Shell ?
@@ -37,10 +39,12 @@ Il existe différents shells Unix, voici les plus connus:
 - ***tcsh*** : signifie *Tenex C Shell*. Une amélioration du *csh*.
 - ***zsh*** : signifie *Z Shell*. Il reprend la plupart des fonctions de bash, ksh et tcsh.
 
-Le **sh** est installer sur tous les OS basés sur UNIX. Mais il montre des limites.
+Le **sh** est installé sur tous les OS basés sur UNIX. Mais il montre des limites.
 
 Par conséquent, aujourd'hui le shell le plus utilisé est le **bash** (sûrement car c'est le shell créé par GNU). Il est installé par défaut sur beaucoup de distribution Linux.
 
 Mais pas sur toutes et donc certaines reste soit en **sh** par défaut ou soit avec d'autres shells comme **ksh**.
+
+
 
 
