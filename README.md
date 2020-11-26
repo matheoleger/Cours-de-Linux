@@ -11,6 +11,6 @@ Puis nous verrons les commandes principales du Shell (rapidement car ce sont les
 
 ## Sommaire
 
-- [Introduction au Shell](./intro_shell)
+- [Introduction au Shell](./intro_shell.md)
 - Premier Script
 - 
