@@ -164,7 +164,19 @@ PS /home/user> [byte] 254
 
   Je vérifie que la copie c'est effectuée dans le bon dossier.
 
-- (à suivre...)
+- `Rename-Item` permet de renommer un objet (dossier ou fichier)
+
+  **Exemple:**
+
+  ```powershell
+  PS /home/user> Rename-Item -Path "TestFile.txt" -NewName "FichierRenommé.txt"
+  ```
+  Ici on renomme le fichier *TestFile.txt* (assigner par `-Path "TextFile.txt"`) en *FichierRenommé.txt* (assigner par `-NewName "FichierRenommé.txt"`)
+
+  Résultat:
+
+   ![Rename-Item](./Ressources/rename-item.jpg)
+
 
 
 
