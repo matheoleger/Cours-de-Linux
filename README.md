@@ -21,7 +21,7 @@ Puis nous verrons les commandes principales du Shell (rapidement car ce sont les
 ## Sources
 
 #### Introduction au Shell
-Il y a Wikipédia en général . J'ai mis le lien principal qui permet de trouver tous les liens qui m'ont servit pour détailler.
+Utilisation de Wikipédia en général . J'ai mis le lien principal qui permet de trouver tous les liens qui m'ont servis à détailler.
 https://fr.wikipedia.org/wiki/Shell
 
 https://www.youtube.com/watch?v=Fiz3lMZhWKM
