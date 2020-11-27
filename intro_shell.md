@@ -49,15 +49,15 @@ Un récapitulatif de l'histoire de ces shells, juste en dessous, dans la catégo
 
 -----------
 
-### Histoire du Shell
+## Histoire du Shell
 
-##### Pourquoi le "Shell" ?
+#### Pourquoi le "Shell" ?
 
 > :bulb: Le terme anglais « shell » vient à l'origine de la terminologie employée avec les premiers systèmes d'exploitation de type Unix où il avait le sens plus spécifique de shell Unix. [Wikipédia](https://fr.wikipedia.org/wiki/Interface_syst%C3%A8me)
 
 Les différentes couches logicielles sont décrites par comparaison à une noix, avec son noyau et sa coque (pour accéder au noyau il faut passer par la coque. Comme dans le milieu informatique on doit passer par le shell pour communiquer avec le noyau).
 
-##### Histoire des principaux Shells Unix
+#### Histoire des principaux Shells Unix
 
 - **1971**: Apparition du ***Thompson Shell*** avec la première version d'Unix. Créé par **Ken Thompson**.
 
