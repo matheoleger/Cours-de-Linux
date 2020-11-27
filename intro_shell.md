@@ -45,9 +45,26 @@ Par conséquent, aujourd'hui le shell le plus utilisé est le **bash** (sûremen
 
 Mais pas sur toutes et donc certaines reste soit en **sh** par défaut ou soit avec d'autres shells comme **ksh**.
 
+Un récapitulatif de l'histoire de ces shells juste en dessous dans la catégorie [Histoire du Shell > Histoire des principaux Shells Unix](./intro_shell.md#histoire-des-principaux-shells-unix)
+
 -----------
 
 ### Histoire du Shell
+
+##### Pourquoi le "Shell" ?
+
+> :bulb: Le terme anglais « shell » vient à l'origine de la terminologie employée avec les premiers systèmes d'exploitation de type Unix où il avait le sens plus spécifique de shell Unix. [Wikipédia](https://fr.wikipedia.org/wiki/Interface_syst%C3%A8me)
+
+Les différentes couches logicielles sont décrites par comparaison à une noix, avec son noyau et sa coque (pour accéder au noyau il faut passer par la coque. Comme dans le milieu informatique on doit passer par le shell pour communiquer avec le noyau).
+
+##### Histoire des principaux Shells Unix
+
+**1971**: Apparition du ***Thompson Shell*** avec la première version d'Unix. Créé par Ken Thompson.
+
+**1977**: Apparition du ***Bourne Shell*** (**sh**) créé par Stephen Bourne et qui remplaca le **Thompson Shell** dans la 7ème version d'Unix.
+
+**1978**: Création du ***C Shell*** (**csh**) par l'étudiant Bill Joy
+
 
 
 
