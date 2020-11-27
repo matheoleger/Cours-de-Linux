@@ -45,7 +45,7 @@ Par conséquent, aujourd'hui le shell le plus utilisé est le **bash** (sûremen
 
 Mais pas sur toutes et donc certaines reste soit en **sh** par défaut ou soit avec d'autres shells comme **ksh**.
 
-Un récapitulatif de l'histoire de ces shells juste en dessous dans la catégorie [Histoire du Shell > Histoire des principaux Shells Unix](./intro_shell.md#histoire-des-principaux-shells-unix)
+Un récapitulatif de l'histoire de ces shells, juste en dessous, dans la catégorie [Histoire du Shell > Histoire des principaux Shells Unix](./intro_shell.md#histoire-des-principaux-shells-unix)
 
 -----------
 
@@ -59,11 +59,20 @@ Les différentes couches logicielles sont décrites par comparaison à une noix,
 
 ##### Histoire des principaux Shells Unix
 
-**1971**: Apparition du ***Thompson Shell*** avec la première version d'Unix. Créé par Ken Thompson.
+- **1971**: Apparition du ***Thompson Shell*** avec la première version d'Unix. Créé par **Ken Thompson**.
 
-**1977**: Apparition du ***Bourne Shell*** (**sh**) créé par Stephen Bourne et qui remplaca le **Thompson Shell** dans la 7ème version d'Unix.
+- **1977**: Apparition du ***Bourne Shell*** (**sh**) créé par **Stephen Bourne** et qui remplaca le **Thompson Shell** dans la 7ème version d'Unix.
 
-**1978**: Création du ***C Shell*** (**csh**) par l'étudiant Bill Joy
+- **1978**: Création du ***C Shell*** (**csh**) par l'étudiant **Bill Joy**. Il permet pour la première fois la réutilisation de commandes précédemment utilisées.
+
+- **1983**: Apparition du ***Korn Shell*** (**ksh**) créé par David Korn.
+
+- **1988**: Création du ***Bourne-Again Shell*** (**bash**) par **Brian Fox** pour la *Free Software Foundation* (organisation pour les logiciels libres de droits) dans le cadre du projet GNU.
+
+- **1990**: Création du ***Z Shell*** (**zsh**) par l'étudiant **Paul Falstad**.
+
+
+
 
 
 
