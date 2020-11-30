@@ -25,6 +25,12 @@ On peut donc écrire le code de *Hello World* :
 
 echo "Hello World" #va écrire "Hello World!" dans la console
 ```
+Le fichier est composé de 2 choses :
+
+- `#!/bin/bash` : cette ligne sert à dire qu'on va **utiliser** les commandes bash. Elle donne le **chemin** du programme **bash**.
+
+- `echo`: [Explication ici](./new_command.md) (dans le fichier des nouvelles commandes).
+
 Maintenant que notre script est écrit, on peut l'executer.
 Afin d'executer un programme il faut faire comme ceci :
 ```bash
@@ -45,7 +51,7 @@ La ligne qui nous interesse est celle en surbrillance c'est-à-dire la ligne du 
 
 Comme on peut le voir, il y a écrit `-rw-r--r--`. Cela correspond au droit que l'on possède sur le fichier.
 
-Comme on a pu le voir sur le passage sur les droits des fichiers:
+Comme on a pu le voir sur le passage sur les [droits des fichiers](https://github.com/kevinniel/resources/blob/master/Cours/linux/droits.md) :
 
 - ***r*** : pour *Read* (=Lire). Correspond au droit de lecture.
 - ***w*** : pour *Write* (=Ecrire). Correspond au droit d'écriture.
@@ -56,7 +62,7 @@ Donc si on veut avoir les droits d'execution, on peut faire:
 - `chmod +x hello_world.sh` 
 - `chmod 755 hello_world.sh`
 
-Les 2 manières commandes la même chose. C'est-à-dire **tous les droits** à l'**utilisateur propriétaire** et seulement le droit de **lecture** et d'**execution** pour le **reste des utilisateurs** et le groupe concerné. Ce qui donnera ceci `-rwxr-xr-x`.
+Les 2 commandes font la même chose. C'est-à-dire **tous les droits** à l'**utilisateur propriétaire** et seulement le droit de **lecture** et d'**execution** pour le **reste des utilisateurs** et le groupe concerné. Ce qui donnera ceci `-rwxr-xr-x`.
 
 Voici le résultat du script:
 
@@ -65,3 +71,4 @@ $ ./hello_world.sh
 Hello World!
 $
 ```
+Voilà, on a réussi notre premier script !

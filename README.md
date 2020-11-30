@@ -16,7 +16,9 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
     - [Qu'est-ce que le Shell ?](./intro_shell.md#quest-ce-que-le-shell-) 
     - [Histoire du Shell](./intro_shell.md#histoire-du-shell)
 - Commande principale du bash
-- Editer un fichier avec `nano` ou `vi`
+- Editer un fichier 
+    - Editer avec `nano` 
+    - Editer avec `vi`
 - [Premier Script](./premier_script.md)
 
 
