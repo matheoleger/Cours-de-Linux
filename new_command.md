@@ -2,6 +2,8 @@
 
 ###### Ayant déjà vu dans le cours les **commandes**, j'y mettrais les nouvelles commandes que nous n'avons pas vue précedemment.
 
+##### Liens vers le fichier des commandes vues dans le cours : https://github.com/kevinniel/resources/blob/master/Cours/linux/commandes_generiques.md
+
 -----
 
 ### La commande ``echo``
@@ -10,7 +12,7 @@
 
 Elle s'écrit comme ceci `echo "ce que l'on veut écrire"`
 
-##### Exemples :
+##### Exemple :
 
 ```bash
 $ echo "Bonjour tout le monde"
