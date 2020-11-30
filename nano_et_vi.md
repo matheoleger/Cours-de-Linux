@@ -8,7 +8,7 @@ On peut éditer un fichier avec la  commande `nano`
 
 Pour ce faire on doit faire comme ceci `nano nomdufichier`
 
-##### Exemple :
+#### Exemple :
 
 On veut éditer un fichier nommé `editer.sh`.
 
@@ -53,6 +53,19 @@ On va pouvoir éditer notre fichier avec la commande `vi`.
 
 La commande marche pareil que celle de `nano` c'est-à-dire `vi nomdufichier`.
 
+`vi` fonctionne differemment de `nano`. En effet il y a 2 modes de fonctionnement avec `vi` :
+- le mode **console**, pour y rentrer il faut appuyer sur *ECHAP*
+- le mode **insertion**, pour y entrer il faut appuyer sur *i*
+
+#### Le mode console
+
+Le **mode console** permet de faire beaucoup de chose. On peut se **déplacer** dans le fichier, faire des **copier-coller**, **supprimer** des mots ou des lettres etc...
+
+Normalement on y dans ce mode dès **le démarrage**.
+
+Il y a énormément de commande, mais voici les plus pratiques (vous pouvez retrouver la documentation de Linux-France [ici](http://wiki.linux-france.org/wiki/Utilisation_de_vi)) :
+
+
 ##### Exemple :
 
 On veut éditer le fichier `editer.sh` :
@@ -64,8 +77,7 @@ Voici la fenêtre qui s'ouvre :
 
 ![vi](./Ressources/vi_fenetre_editer.png)
 
-`vi` fonctionne differemment de `nano`. En effet il y a 2 modes de fonctionnement avec `vi` :
-- le mode **console**, pour y rentrer il faut appuyer sur *ECHAP*
-- le mode **insertion**, pour y entrer il faut appuyer sur *i*
+
+
 
 
