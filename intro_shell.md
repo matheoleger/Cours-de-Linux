@@ -20,9 +20,9 @@ On va s'intéresser à la première forme : **l'interface en ligne de commande**
 Comme son nom l'indique, cela va permettre à l'utilisateur de **communiquer** via du texte avec la machine (et inversement). Mais pour que les commandes soient reconnues, on a besoin d'un **interpréteur de commande** (*CLI = command-line interpreter*).
 
 Ils existent différents interpréteurs de commandes selon l'OS utilisé:
-    - Sous Windows, le logiciel d'interprétation des commandes est le `cmd.exe` mais depuis quelques années, il existe un 2ème interpréteur de commande qui est le `powershell.exe`
-    - Sous Linux, les interpréteur de commandes sont les `shells Unix` (ils en existent beaucoup, exemples : sh / bash / etc....)
-    - Sous Mac, c'est simplement le `terminal`
+- Sous Windows, le logiciel d'interprétation des commandes est le `cmd.exe` mais depuis quelques années, il existe un 2ème interpréteur de commande qui est le `powershell.exe`
+- Sous Linux, les interpréteur de commandes sont les `shells Unix` (ils en existent beaucoup, exemples : sh / bash / etc....)
+- Sous Mac, c'est simplement le `terminal`
 
 On va s'intéresser aux shells Unix.
 Tout d'abord ***qu'est ce qu'un shell Unix ?***
