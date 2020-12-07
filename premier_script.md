@@ -34,7 +34,7 @@ Le fichier est composé de 2 choses :
 
 - `echo`: [Explication ici](./new_command.md) (dans le fichier des nouvelles commandes).
 
-#### Execution du script
+#### Execution du script (+ définition des droits)
 
 Maintenant que notre script est écrit, on peut l'executer.
 Afin d'executer un programme il faut faire comme ceci :
@@ -63,7 +63,7 @@ En effet, si on fait la commande `ls -l` on peut voir ceci :
 
 ![ls -l](./Ressources/ls-l.png)
 
-La ligne qui nous interesse est celle en surbrillance c'est-à-dire la ligne du hello_world.sh.
+La ligne qui nous intéresse est celle en surbrillance c'est-à-dire la ligne du hello_world.sh.
 
 Comme on peut le voir, il y a écrit `-rw-r--r--`. Cela correspond au droit que l'on possède sur le fichier.
 
@@ -103,7 +103,7 @@ Une fois déplacer, il suffira d'utiliser la commande `nomdufichier.sh`
 
 **Exemple**
 
-On passe en mode **ROOT** ([voir nouvelle commande](./new_command.md#la-commande-su-root))
+On passe en mode **ROOT** ([voir `su root`](./new_command.md#la-commande-su-root) dans nouvelle commande)
 
 ```bash
 $ su root
@@ -111,9 +111,9 @@ $ su root
 On copie le fichier dans un bon répertoire ([voir commande cours](https://github.com/kevinniel/resources/blob/master/Cours/linux/commandes_generiques.md))
 
 ```bash
-$ cp hello_world.sh /usr/local/bin
+/# cp hello_world.sh /usr/local/bin
 ```
-
+Maintenant on peut executer le fichier de cette manière et de n'importe où dans linux.
 ```bash
 $ hello_world.sh
 Hello World!
