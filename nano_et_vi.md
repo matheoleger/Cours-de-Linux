@@ -47,21 +47,21 @@ Quelques commandes pratiques :
 > vi est un éditeur de texte en mode texte plein écran écrit par Bill Joy en 1976 sur une des premières versions de la distribution Unix BSD.
 >Il est présent d'office sur la majorité des systèmes Unix actuels, souvent sous la forme d'un clone du logiciel vi originel. [Linux-France](http://wiki.linux-france.org/wiki/Utilisation_de_vi)
 
-Ici, ça va être un peu plus compliqué car au premier abord ce n'est pas très intuitif.
+Ici, ça va être un peu plus compliqué, car au premier abord, ce n'est pas très intuitif.
 
 On va pouvoir éditer notre fichier avec la commande `vi`.
 
-La commande marche pareil que celle de `nano` c'est-à-dire `vi nomdufichier`.
+La commande marche pareil que celle de `nano`, c'est-à-dire `vi nomdufichier`.
 
-`vi` fonctionne differemment de `nano`. En effet il y a 2 modes de fonctionnement avec `vi` :
-- le mode **console**, pour y rentrer il faut appuyer sur *ECHAP*
-- le mode **insertion**, pour y entrer il faut appuyer sur *i*
+`vi` fonctionne différemment de `nano`. En effet, il y a 2 modes de fonctionnement avec `vi` :
+- le mode **console**, pour y rentrer, il faut appuyer sur *ECHAP*
+- le mode **insertion**, pour y entrer, il faut appuyer sur *i*
 
-#### Le mode console
+#### Le mode console.
 
-Le **mode console** permet de faire beaucoup de chose. On peut se **déplacer** dans le fichier, faire des **copier-coller**, **supprimer** des mots ou des lettres etc...
+Le **mode console** permet de faire beaucoup de choses. On peut se **déplacer** dans le fichier, faire des **copier-coller**, **supprimer** des mots ou des lettres, etc...
 
-Normalement on y dans ce mode dès **le démarrage**.
+Normalement on est dans ce mode dès **le démarrage**.
 
 Il y a énormément de commande, mais voici les plus pratiques (vous pouvez retrouver la documentation de Linux-France [ici](http://wiki.linux-france.org/wiki/Utilisation_de_vi)) :
 
@@ -77,10 +77,10 @@ Voici la fenêtre qui s'ouvre :
 
 ![vi](./Ressources/vi_fenetre_editer.png)
 
-Je vais donner les principales commandes ainsi que quelques petits choses pour bien se servir de `vi`.
+Je vais donner les principales commandes ainsi que quelques petites choses pour bien se servir de `vi`.
 
 Tout d'abord, voici la manière de comprendre ce que j'écris :
-- `:` et **une lettre ou une suite de lettre**, ça veut dit que c'est une ligne de commande donc il faut appuyer sur `:` puis sur la lettre en question et appuyer sur `Enter`.
+- `:` et **une lettre ou une suite de lettres**, ça veut dit que c'est une ligne de commande donc il faut appuyer sur `:` puis sur la lettre en question et appuyer sur `Enter`.
 
     Exemple : `:` puis `q` pour quitter `vi`.
 
@@ -89,9 +89,9 @@ Tout d'abord, voici la manière de comprendre ce que j'écris :
 
 #### En mode *édition*
 
-- On peut **écrire** mais **ATTENTION** on ne peut pas se déplacer d'une ligne à une autre. (pour ce faire il faut être dans le mode console)
+- On peut **écrire**, mais **ATTENTION**, on ne peut pas se déplacer d'une ligne à une autre. (pour ce faire, il faut être dans le mode console)
 
-- Comme dit précédemment, pour rentrer dans le mode edition il faut appuyer sur ***i***.
+- Comme dit précédemment, pour rentrer dans le mode édition il faut appuyer sur ***i***.
 
 - ***a*** : entrer dans le mode édition mais à l'endroit où est mis le curseur.
 
@@ -101,32 +101,32 @@ Tout d'abord, voici la manière de comprendre ce que j'écris :
 
 #### En mode *console*
 
-###### Les commandes de ***sauvegarde***
+##### Les commandes de ***sauvegarde***
 - ``:w`` : Sauvegarder le fichier.
-- ``:q`` : Quitter `vi` sans sauvegarder (ne fonctionnera pas si on a modifier le fichier).
+- ``:q`` : Quitter `vi` sans sauvegarder (ne fonctionnera pas si on a modifié le fichier).
 - ``:q!`` : Quitter `vi` sans sauvegarder mais ne manière forcer.
 - ``:wq`` : Quitte et sauvegarde.
 - ``:w nom_de_fichier`` : sauvegarde le fichier sous le nom *nom_de_fichier*.
 - ``:w! nom_de_fichier`` : remplace le contenu du fichier *nom_de_fichier*.
 
-###### Les commandes ***Copier-Coller***
+##### Les commandes ***Copier-Coller***
 
 - ``Y`` : copie la ligne où le curseur est mis.
 - ``nY`` : copie `n` ligne. (remplacer n par un chiffre)
 -  ``P`` : colle la ligne avant le curseur.
 - ``p`` : colle la ligne après le curseur.
 
-###### Les commandes de ***suppression***
+##### Les commandes de ***suppression***
 
 - `x` ou `Suppr` : Supprime le caractère du curseur.
 - ``dw`` : suppression d'un mot
-- ``dnw`` : suppresion de ``n`` mots d'une ligne (remplacer n par un chiffre).
+- ``dnw`` : suppression de ``n`` mots d'une ligne (remplacer n par un chiffre).
 - ``dd `` : suppression d'une ligne.
 - `ndd` : supprime `n` ligne (remplacer n par un chiffre).
 
-###### Les commandes de ***déplacement du curseur***
+##### Les commandes de ***déplacement du curseur***
 
-- ``les flèches directionnelles`` : Permet de se déplacer dans le fichier. **ATTENTION** : il ne faut pas se déplacer dans le mode édition mais bien dans le mode console.
+- ``les flèches directionnelles`` : Permet de se déplacer dans le fichier. **ATTENTION** : il ne faut pas se déplacer dans le mode édition, mais bien dans le mode console.
 - `j` : descend d'une ligne.
 - `k` : monte d'une ligne.
 - `l` : déplacement vers la droite.
