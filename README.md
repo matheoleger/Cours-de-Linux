@@ -16,15 +16,15 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
     - [Qu'est-ce que le Shell ?](./intro_shell.md#quest-ce-que-le-shell-) 
     - [Histoire du Shell](./intro_shell.md#histoire-du-shell)
 2. Commande principale du bash
-3. Formation du shell (variables / conditions etc...)
-4. [Editer un fichier](./nano_et_vi.md) 
+
+3. [Editer un fichier](./nano_et_vi.md) 
     - [Editer avec `nano`](./nano_et_vi.md#editer-un-fichier-avec-nano) 
     - [Editer avec `vi`](./nano_et_vi.md#editer-un-fichier-avec-vi)
-5. [Premier Script](./premier_script.md)
+4. [Premier Script](./premier_script.md)
     - [Création d'un script](./premier_script.md#création-et-édition-du-script)
     - [Exécution basique d'un script](./premier_script.md#execution-du-script--définition-des-droits)
     - [Exécution de n'importe où](./permier_script.md#execution-du-script-de-nimporte-où)(sous forme de commande)
-
+5. [Formation du shell](./form_shell.md) (variables / conditions etc...)
 
 
 -----
