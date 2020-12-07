@@ -113,7 +113,7 @@ On copie le fichier dans un bon répertoire ([voir commande cours](https://githu
 ```bash
 /# cp hello_world.sh /usr/local/bin
 ```
-Maintenant on peut executer le fichier de cette manière et de n'importe où dans linux.
+Maintenant on peut exécuter le fichier de cette manière et de n'importe où dans linux.
 ```bash
 $ hello_world.sh
 Hello World!

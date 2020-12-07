@@ -6,3 +6,20 @@
 
 ## Les variables
 
+Pour déclarer une variable, il faut faire :
+
+```bash
+nomdelavar=lavaleur
+```
+En bash une variable **n'est pas typée**. Donc on peut avoir beaucoup de variable différentes :
+
+```bash
+caractere=a
+mot=texte
+message="texte avec espace"
+messagedeux='texte avec espace 2'
+nombre=2108
+```
+
+
+
