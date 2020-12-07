@@ -21,6 +21,9 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
     - [Editer avec `nano`](./nano_et_vi.md#editer-un-fichier-avec-nano) 
     - [Editer avec `vi`](./nano_et_vi.md#editer-un-fichier-avec-vi)
 - [Premier Script](./premier_script.md)
+    - [Création du script](./premier_script.md#création-et-édition-du-script)
+    - [Exécution basique du script](./premier_script.md#execution-du-script--définition-des-droits)
+    - [Exécution de n'importe où (sous forme de commande)](./permier_script.md#execution-du-script-de-nimporte-où)
 
 
 
