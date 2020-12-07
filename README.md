@@ -23,7 +23,7 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
 5. [Premier Script](./premier_script.md)
     - [Création d'un script](./premier_script.md#création-et-édition-du-script)
     - [Exécution basique d'un script](./premier_script.md#execution-du-script--définition-des-droits)
-    - [Exécution de n'importe où](./permier_script.md#execution-du-script-de-nimporte-où){:target="_blank" } (sous forme de commande)
+    - [Exécution de n'importe où](./permier_script.md#execution-du-script-de-nimporte-où)(sous forme de commande)
 
 
 
