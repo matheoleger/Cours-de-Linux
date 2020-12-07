@@ -2,9 +2,12 @@
 
 ###### On utilisera la distribution **Debian 10** pour faire notre cours. Ainsi, nous utiliserons le shell **bash**.
 
+###### Nous verrons ici des choses très importante comme l'**exécution d'un fichier**, l'**édition d'un fichier** (sa **structure importante**) mais aussi la manière de pouvoir **exécuter le fichier de n'importe où** (créer sa commande)
 -------
 
 ### Hello World
+
+#### Création et édition du script
 
 Pour commencer, créons un fichier *hello_world.sh* et éditons-le.
 
@@ -31,12 +34,25 @@ Le fichier est composé de 2 choses :
 
 - `echo`: [Explication ici](./new_command.md) (dans le fichier des nouvelles commandes).
 
+#### Execution du script
+
 Maintenant que notre script est écrit, on peut l'executer.
 Afin d'executer un programme il faut faire comme ceci :
 ```bash
 $ ./hello_world.sh
 ```
-Mais malheureusement :
+On utilise le ``./`` pour lancer son programme. On peut aussi (surtout sur les gros programmes) utiliser ***l'execution de débogage*** en faisant la commande `bash -x lenomdufichier`
+
+Exemple du ``hello_world.sh`` si cela fonctionnait :
+
+```bash
+$ bash -x hello_world.sh
++ echo 'Hello World!'
+Hello World!
+$
+```
+
+Mais malheureusement dans notre cas, il y a un problème :
 
 ```bash
 $ ./hello_world.sh
@@ -74,3 +90,32 @@ $
 Voilà, on a réussi notre premier script ! 
 
 C'est un script basique qui ne sert pas à grand chose. Mais on va pouvoir faire plein de chose très pratique et grâce aux exercices, on va voir la **vraie utilité** des **Scripts**.
+
+#### Execution du script de n'importe où
+
+On peut exécuter un fichier de n'importe où, mais pour ce faire il faut placer le fichier dans un endroit bien particulier.
+
+Il faut placer ou copier le script dans un de ces répertoires : ``/bin``, ``/usr/bin`` ou ``/usr/local/bin`` (ou un autre répertoire du **PATH**). Il est nécessaire d'être en mode **ROOT** pour déplacer le fichier dans les répertoire **PATH**.
+
+Si jamais on veut trouver un autre répertoire du **PATH**, on peut faire la commande `echo $PATH`. Elle affichera toutes les répertoires du PATH.
+
+Une fois déplacer, il suffira d'utiliser la commande `nomdufichier.sh`
+
+**Exemple**
+
+On passe en mode **ROOT** ([voir nouvelle commande](./new_command.md#la-commande-su-root))
+
+```bash
+$ su root
+```
+On copie le fichier dans un bon répertoire ([voir commande cours](https://github.com/kevinniel/resources/blob/master/Cours/linux/commandes_generiques.md))
+
+```bash
+$ cp hello_world.sh /usr/local/bin
+```
+
+```bash
+$ hello_world.sh
+Hello World!
+$
+```
