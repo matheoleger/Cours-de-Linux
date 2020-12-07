@@ -1,8 +1,8 @@
 # Formation du Shell
 
-##### Le shell ressemble à un langage de programmation. C'est-à-dire qu'il se forme de la même manière avec l'utilisation de variables, de boucles, de conditions etc...
+#### Le shell ressemble à un langage de programmation. C'est-à-dire qu'il se forme de la même manière avec l'utilisation de variables, de boucles, de conditions etc...
 
-##### Il est préférable d'avoir vu avant le [premier script](./premier_script.md) qui permet de poser les bases sur l'exécution et l'écriture d'un script.
+#### Il est préférable d'avoir vu avant le [premier script](./premier_script.md) qui permet de poser les bases sur l'exécution et l'écriture d'un script.
 ------
 
 ## Les variables
@@ -49,9 +49,9 @@ $ ./hello_world.sh
 Hello World!
 $
 ```
-#### La différence entre les ***"quotes"***
+### La différence entre les ***"quotes"***
 
-##### Single quotes (apostrophes ' ')
+#### Single quotes (apostrophes ' ')
 
 Dans le script 
 ```bash
@@ -71,7 +71,7 @@ $
 
 En effet, ici cela écrit littéralement ce qu'il y a entre les apostrophes. (il n'y a pas d'analyse)
 
-##### Double quotes (guillemets " ")
+#### Double quotes (guillemets " ")
 
 Dans le script 
 ```bash
@@ -90,7 +90,7 @@ $
 ```
 En effet, ici cela écrit ce qu'il y a entre les apostrophes en prenant en compte les symboles spéciaux. (il y a une analyse)
 
-##### Back quotes (les accents graves \` `)
+#### Back quotes (les accents graves \` `)
 
 Dans le script 
 ```bash
@@ -108,6 +108,9 @@ la variable est : username/Documents
 $
 ```
 Les accents graves permettent de mettre une commande dans une variable (et par conséquent de l'exécuter avec ``echo``).
+
+
+## Les variables d'environnement
 
 
 

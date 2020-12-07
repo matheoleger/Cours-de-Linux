@@ -25,6 +25,7 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
     - [Exécution basique d'un script](./premier_script.md#execution-du-script--définition-des-droits)
     - [Exécution de n'importe où](./permier_script.md#execution-du-script-de-nimporte-où)(sous forme de commande)
 5. [Formation du shell](./form_shell.md) (variables / conditions etc...)
+    - [Les Variables](./form_shell.md#les-variables)
 
 
 -----
