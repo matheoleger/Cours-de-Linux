@@ -71,4 +71,6 @@ $ ./hello_world.sh
 Hello World!
 $
 ```
-Voilà, on a réussi notre premier script !
+Voilà, on a réussi notre premier script ! 
+
+C'est un script basique qui ne sert pas à grand chose. Mais on va pouvoir faire plein de chose très pratique et grâce aux exercices, on va voir la **vraie utilité** des **Scripts**.

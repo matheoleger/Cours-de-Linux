@@ -77,7 +77,59 @@ Voici la fenêtre qui s'ouvre :
 
 ![vi](./Ressources/vi_fenetre_editer.png)
 
+Je vais donner les principales commandes ainsi que quelques petits choses pour bien se servir de `vi`.
+
+Tout d'abord, voici la manière de comprendre ce que j'écris :
+- `:` et **une lettre ou une suite de lettre**, ça veut dit que c'est une ligne de commande donc il faut appuyer sur `:` puis sur la lettre en question et appuyer sur `Enter`.
+
+    Exemple : `:` puis `q` pour quitter `vi`.
+
+- `Ctrl + latouche`, ça signifie qu'il faut appuyer sur les touches en même temps.
+- `touche`, c'est qu'il faut juste appuyer sur la touche.
+
+#### En mode *édition*
+
+- On peut **écrire** mais **ATTENTION** on ne peut pas se déplacer d'une ligne à une autre. (pour ce faire il faut être dans le mode console)
+
+- Comme dit précédemment, pour rentrer dans le mode edition il faut appuyer sur ***i***.
+
+- ***a*** : entrer dans le mode édition mais à l'endroit où est mis le curseur.
+
+- ***Retour arrière*** : permet de revenir en arrière sur la ligne. Peut permettre de réécrire par dessus ou de juste supprimer.
+- ***x*** ou ***Suppr*** : permet de supprimer le caractère où se trouve le curseur.
 
 
+#### En mode *console*
 
+###### Les commandes de ***sauvegarde***
+- ``:w`` : Sauvegarder le fichier.
+- ``:q`` : Quitter `vi` sans sauvegarder (ne fonctionnera pas si on a modifier le fichier).
+- ``:q!`` : Quitter `vi` sans sauvegarder mais ne manière forcer.
+- ``:wq`` : Quitte et sauvegarde.
+- ``:w nom_de_fichier`` : sauvegarde le fichier sous le nom *nom_de_fichier*.
+- ``:w! nom_de_fichier`` : remplace le contenu du fichier *nom_de_fichier*.
 
+###### Les commandes ***Copier-Coller***
+
+- ``Y`` : copie la ligne où le curseur est mis.
+- ``nY`` : copie `n` ligne. (remplacer n par un chiffre)
+-  ``P`` : colle la ligne avant le curseur.
+- ``p`` : colle la ligne après le curseur.
+
+###### Les commandes de ***suppression***
+
+- `x` ou `Suppr` : Supprime le caractère du curseur.
+- ``dw`` : suppression d'un mot
+- ``dnw`` : suppresion de ``n`` mots d'une ligne (remplacer n par un chiffre).
+- ``dd `` : suppression d'une ligne.
+- `ndd` : supprime `n` ligne (remplacer n par un chiffre).
+
+###### Les commandes de ***déplacement du curseur***
+
+- ``les flèches directionnelles`` : Permet de se déplacer dans le fichier. **ATTENTION** : il ne faut pas se déplacer dans le mode édition mais bien dans le mode console.
+- `j` : descend d'une ligne.
+- `k` : monte d'une ligne.
+- `l` : déplacement vers la droite.
+- `h` : déplacement vers la gauche.
+
+Il y a encore plein de commande mais je trouve que ce sont les plus importantes. Voici le lien d'une [vidéo](https://www.youtube.com/watch?v=UIUg2Ktwccw&t) ainsi que d'un [site ](http://wiki.linux-france.org/wiki/Utilisation_de_vi) très pratique qui permettent de mieux comprendre le fonctionnement de `vi`.
