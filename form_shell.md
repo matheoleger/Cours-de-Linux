@@ -7,6 +7,8 @@
 
 ## Les variables
 
+### Déclaration et utilisation d'une variable
+
 Pour **déclarer** une variable, il faut faire :
 
 ```bash
@@ -41,6 +43,7 @@ var="Hello World!"
 
 echo $var
 ```
+(voir [ici](./new_command.md#la-commande-echo) pour l'explication du fonctionnement de echo)
 
 Une fois le script exécuté, voici le résultat :
 
@@ -109,6 +112,32 @@ $
 ```
 Les accents graves permettent de mettre une commande dans une variable (et par conséquent de l'exécuter avec ``echo``).
 
+### Demande de saisie
+
+On peut utiliser la commande `read` (explication de la commande [ici](./new_command.md#la-commande-read)) afin d'assigner une valeur par la demande de saisie.
+
+Grâce à `read` on peut faire des programmes avec des demandes de saisie du type :
+
+Dans le script:
+
+```bash
+echo "Combien avez vous d'argent ?"
+
+read monnaie
+
+echo "Vous avez $monnaie€ d'argent !"
+```
+En sortie :
+
+```html
+$ ./monnaie.sh
+Combien avez vous d'argent ?
+50
+Vous avez 50€ d'argent !
+```
+Cet exemple montre l'utilisation de `read` pour lire l'information que le script avait besoin, et retourne avec `echo` la variable.
+
+Vous pouvez retrouver les options de la commande `read` [ici](./new_command.md#la-commande-read).
 
 ## Les variables d'environnement
 
