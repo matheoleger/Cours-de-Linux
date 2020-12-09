@@ -170,3 +170,53 @@ $./ope.sh
 25
 $
 ```
+
+## La commande `env`
+
+Cette commande permet de voir qu'elles sont les [variables d'environnement](./form_shell.md#les-variables-denvironnement).
+
+On doit tout simplement écrire `env` dans le terminal.
+
+### Exemple
+
+```bash
+$ env
+SHELL=/bin/bash
+NAME=MSI
+PWD=/mnt/c/Windows/system32
+LOGNAME=smoowy
+HOME=/home/smoowy
+LANG=C.UTF-8
+...
+$
+```
+
+## La commande `pwd`
+
+La commande `pwd` sert à savoir où l'on se trouve dans les répertoires.
+
+On doit tout simplement écrire `pwd` dans le terminal.
+
+### Exemple
+
+```bash
+$ pwd
+/home/username/Documents
+$
+```
+
+## La commande `export`
+
+On se sert de cette commande pour créer nos propres [variables d'environnement](./form_shell.md#les-variables-denvironnement).
+
+Il suffit juste de faire comme ceci :
+
+```bash
+$ VAR=value
+$ export VAR
+```
+ou
+
+```bash
+$ export VAR=value
+```

@@ -198,8 +198,46 @@ let "multiplication = premier * deuxieme"     #pas besoin de $ (sauf si on utili
 echo $multiplication
 ```
 
+## Les variables des paramètres
+
+On peut ajouter des paramètres après la commande pour lancer le programme, comme ceci :
+
+```bash
+$ ./test.sh param1 param2 param3
+```
+Les valeurs de ses paramètres peuvent être récupérées grâce à des variables qui ont été automatiquement créées :
+
+- $# correspond aux nombres de paramètres (ici *4*)
+- $0 correspond au nom du script (ici *./test.sh*)
+- $1 correspond au premier paramètre (ici *param1*)
+- ...
+- $9
+
+Pour avoir plus de 9 paramètres, il faut utiliser la commande `shift`
+
 
 ## Les variables d'environnement
+
+Les **variables d'environnement** sont des variables qui sont déclarer à l'**échelle globale** de la machine. C'est-à-dire que ce genre de variable est **utilisable partout** (contrairement au variable classique qui sont déclarer et utilisable que dans un fichier).
+
+On peut les connaitre avec la commande `env` (voir [ici](./new_command.md#la-commande-env)).
+
+Voici les plus utiles (d'après [OpenClassrooms](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/43126-afficher-et-manipuler-des-variables)):
+
+- ``SHELL`` : indique quel type de shell est en cours d'utilisation (sh, bash, ksh…) ;
+
+- ``PATH`` : une liste des répertoires qui contiennent des exécutables que vous souhaitez pouvoir lancer sans indiquer leur répertoire. (déjà vu [ici](./premier_script.md#execution-du-script-de-nimporte-où) lors de notre premier script)
+
+- ``HOME`` : la position de votre dossier ``home``.
+
+- ``PWD`` : le dossier dans lequel vous vous trouvez. (on peut aussi utiliser [la commande ``pwd``](./new_command.md#la-commande-pwd))
+
+- ``OLDPWD`` : le dossier dans lequel vous vous trouviez auparavant.
+
+On peut aussi créer notre propre variable d'environnement avec la commande `export` (voir [ici](./new_command.md#la-commande-export)).
+
+
+
 
 
 
