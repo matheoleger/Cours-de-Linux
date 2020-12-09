@@ -58,7 +58,7 @@ Il y a différentes options disponible :
 - ``read -t`` : Permet de limiter le temps que peut mettre l'utilisateur à faire la saisie.
 - ``read -s`` : Permet de cacher la saisie de l'utilisateur.
 
-#### Exemple
+#### Exemples
 
 Dans un fichier script nommé ``prenom.sh`` :
 
@@ -83,4 +83,90 @@ Voici les GIFs résument le fonctionnement des options de `read` :
 
 ![GIF](./Ressources/GIF/readn.gif)
 
-##### À noter qu'ici, mon GIF montre une version "erronée", car il y a un retour à la ligne lors du `echo` alors que je n'ai pas ajouté le ``\n``. En effet, de base le `read -n` va directement arrêter de lire si la saisie atteint le nombre de caractère demandé par conséquent, il se met directement après comme ceci : `PIN code : 1234Your PIN code is 1234`. 
+![GIF](./Ressources/GIF/readt.gif)
+
+![GIF](./Ressources/GIF/reads.gif)
+
+
+## La commande `let`
+
+Cette commande permet de faire des **opérations mathématiques** avec des variables.
+
+En effet, les variables n'ont pas de type et sont **toutes** en réalité des **chaines de caractères**.
+
+Elle **ne** permet **pas** de faire des opérations avec **des nombres décimaux**.
+
+Voici les opérations possibles :
+
+- les additions "+"
+
+- les soustractions "-" 
+
+- les multiplications "*" 
+
+- les divisions "/" 
+
+- les puissances "**" 
+
+- les modulos "%"
+
+Elle se note comme ça : 
+```bash
+let "var_trois = nbr opération nbr"
+```
+
+On peut aussi faire comme ceci si on veut plusieurs variables :
+
+```bash
+let "var_un = nbr"
+
+let "var_deux = nbr"
+
+let "var_trois = var_un opération var_deux"
+```
+Ou alors
+
+```bash
+var_un = nbr
+
+var_deux = nbr
+
+let "var_trois = $var_un opération $var_deux"
+```
+
+#### Exemples
+
+**1er exemple**
+
+Dans le script
+
+```bash
+let "premier = 5"
+
+let "deuxieme = 5"
+
+let "multiplication = premier * deuxieme"     #pas besoin de $ (sauf si on utilise pas `let` pour les 2 premières variables)
+
+echo $multiplication
+```
+En sortie
+
+```bash
+$./ope.sh
+25
+$
+```
+**2ème exemple**
+
+Dans le script
+
+```bash
+let "var = 5 * 5"
+```
+En sortie
+
+```bash
+$./ope.sh
+25
+$
+```

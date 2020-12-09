@@ -137,7 +137,67 @@ Vous avez 50€ d'argent !
 ```
 Cet exemple montre l'utilisation de `read` pour lire l'information que le script avait besoin, et retourne avec `echo` la variable.
 
-Vous pouvez retrouver les options de la commande `read` [ici](./new_command.md#la-commande-read).
+Vous pouvez retrouver les options de la commande `read` [ici](./new_command.md#la-commande-read) avec des exemples.
+
+### Concaténation de variable (= addition de texte)
+
+On peut faire une concaténation de variables contenant des chaines de caractère.
+
+Pour ce faire il faut faire :
+
+```bash
+premierevar=chaine1
+deuxiemevar=chaine2
+total=$premierevar$deuxiemevar
+```
+Et donc si on fait un `echo $total` le résultat sera :
+
+```bash
+chaine1chaine2
+```
+
+Mais on peut aussi ajouter du texte en plus qui n'est pas dans une variables, comme ceci
+
+```bash
+premierevar=chaine1
+deuxiemevar=chaine2
+total="$premierevar est avant $deuxiemevar"
+```
+Donc si on fait un `echo $total` le résultat sera :
+```bash
+chaine1 est avant chaine2
+```
+> :bulb: À savoir qu'on peut aussi faire la concaténation dans un ``echo``.
+
+### Opérations mathématiques
+
+Comme on l'a vu précédemment, il n'y a pas de type pour les variables, et par conséquent il n'y a que des chaines de caractère par défaut. Donc les opérations mathématiques **avec des variables** ne peuvent pas être fait sans commande spécifique.
+
+Il est aussi possible de faire des opérations mathématiques en utilisant la commande `let` (voir la [commande](./new_command.md#la-commande-let)).
+
+
+
+Voici un exemple :
+
+```bash
+let "addition = 5 + 5"
+
+echo $addition
+```
+
+deuxième exemple plus complet :
+
+```bash
+
+let "premier = 5"
+
+let "deuxieme = 5"
+
+let "multiplication = premier * deuxieme"     #pas besoin de $ (sauf si on utilise pas `let` pour les 2 premières variables)
+
+echo $multiplication
+```
+
 
 ## Les variables d'environnement
 
