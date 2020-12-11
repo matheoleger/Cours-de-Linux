@@ -15,7 +15,8 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
 1. [Introduction au Shell](./intro_shell.md)
     - [Qu'est-ce que le Shell ?](./intro_shell.md#quest-ce-que-le-shell-) 
     - [Histoire du Shell](./intro_shell.md#histoire-du-shell)
-2. Commande principale du bash
+
+2. [Commande principale du bash](./new_command.md)
 
 3. [Editer un fichier](./nano_et_vi.md) 
     - [Editer avec `nano`](./nano_et_vi.md#editer-un-fichier-avec-nano) 
@@ -26,6 +27,7 @@ Puis nous verrons les commandes principales du Shell ainsi que le **fonctionneme
     - [Exécution de n'importe où](./permier_script.md#execution-du-script-de-nimporte-où)(sous forme de commande)
 5. [Formation du shell](./form_shell.md) (variables / conditions etc...)
     - [Les Variables](./variable.md#les-variables)
+6. [Exemple n°1](./example_one.md) (Scripts de gestion des comptes utilisateurs)
 
 
 -----
