@@ -7,6 +7,9 @@
 >  - de voir tous les utilisateurs
 >  - de faire une recherche sur l'existence d'un utilisateur en particulier
 
+#### On va utiliser beaucoup de commande de gestion d'utilisateur, donc voici le lien vers le fichier du cours : https://github.com/kevinniel/resources/blob/master/Cours/linux/utilisateurs_et_groupes.md
+
+#### Il n'y a pas d'exemple mais on comprend rapidement le fonctionnement des commandes.
 ------
 
 #### Le script est plutôt chargé, par conséquent je vais le mettre en entier afin de montrer une vue d'ensemble puis expliquer partie par partie selon l'utilité des parties.
@@ -140,13 +143,13 @@ On fait, à l'intérieur de cette condition, une autre vérification (avec d'aut
 
 **Si c'est le cas** alors on affiche les noms d'utilisateurs qui sont stocké dans le fichier ``passwd``. 
 
-Pour afficher **seulement le contenu** qui nous intéresse (car dans ``passwd`` il y a un tas d'information sur les utilisateurs, or nous on veut juste le **nom**), on utilise la commande `cut` (voir [ici](./new_command.md)) qui va couper toute la partie qui se trouve après le premier champ (défini par ``-f1``) dont le séparateur ":" à été défini par ``-d:``. 
+Pour afficher **seulement le contenu** qui nous intéresse (car dans ``passwd`` il y a un tas d'information sur les utilisateurs, or nous on veut juste le **nom**), on utilise la commande `cut` (voir [ici](./new_command.md) cette nouvelle commande) qui va couper toute la partie qui se trouve après le premier champ (défini par ``-f1``) dont le séparateur ":" à été défini par ``-d:``. 
 
 **:floppy_disk: Pour faire plus simple, `cut -d: -f1` permet de garder la partie avant le premier ":" rencontré (sur une ligne), donc le premier mot qui correspond au nom d'utilisateur.**
 
 **Dans le cas où ce n'est pas "show" qui est le premier paramètre**, alors on va chercher à savoir si ce premier argument est un nom d'utilisateur.
 
-C'est ici qu'on va devoir dire si c'est un nom d'utilisateur ou pas. Pour ce faire il faut commencer par une **vérification** avec la commande ``getent`` (voir [ici](./new_command.md)) qui va chercher dans la **base de donnée** ``passwd`` le nom d'utilisateur qu'on cherche à vérifier `$1` (``$1`` est la variable qui a été créée automatiquement lors du lancement du programme et qui correspond au paramètre n°1).
+C'est ici qu'on va devoir dire si c'est un nom d'utilisateur ou pas. Pour ce faire il faut commencer par une **vérification** avec la commande ``getent`` (voir [ici](./new_command.md) cette nouvelle commande) qui va chercher dans la **base de donnée** ``passwd`` le nom d'utilisateur qu'on cherche à vérifier `$1` (``$1`` est la variable qui a été créée automatiquement lors du lancement du programme et qui correspond au paramètre n°1).
 
  **:floppy_disk: Littéralement, la commande va chercher dans la base de donnée ``passwd`` si le nom placé dans la variable ``$1`` fait parti du fichier. La commande est de base censé retourner la ligne correspondant au nom d'utilisateur.**
 
@@ -179,11 +182,11 @@ then
 
 Cette fois-ci, c'est la cas où il y a 2 paramètres. À l'intérieur de cette condition on y retrouve d'autres conditions dont les deux ci-dessus.
 
-La **première** va vérifier si la commande demandé est `add`. **Si c'est le cas**, alors en tant que **"super-utilisateur"** (sudo) le script exécutera la commande `useradd` (lien [ici](./new_command.md)) qui sert à **créer un utilisateur** ayant le nom placé en **deuxième paramètre** (dans la variable ``$2``).
+La **première** va vérifier si la commande demandé est `add`. **Si c'est le cas**, alors en tant que **"super-utilisateur"** (sudo) le script exécutera la commande `useradd` (lien [ici](https://github.com/kevinniel/resources/blob/master/Cours/linux/utilisateurs_et_groupes.md#commandes)) qui sert à **créer un utilisateur** ayant le nom placé en **deuxième paramètre** (dans la variable ``$2``).
 
 **:floppy_disk: La ligne `sudo useradd $2` va créer un utilisateur du nom placé dans la variable ``$2``**.
 
-La **deuxième** va vérifier si la commande demandé est `delete`.**Si c'est le cas**, alors le programme fera la même chose que la condition vu précédemment à la grande différence que la commande `userdel` sert à **supprimer un utilisateur**.
+La **deuxième** va vérifier si la commande demandé est `delete`.**Si c'est le cas**, alors le programme fera la même chose que la condition vu précédemment à la grande différence que la commande `userdel` (lien [ici](https://github.com/kevinniel/resources/blob/master/Cours/linux/utilisateurs_et_groupes.md#commandes)) sert à **supprimer un utilisateur**.
 
 **:floppy_disk: La ligne `sudo userdel $2` va supprimer l'utilisateur du nom placé dans la variable ``$2``**.
 
@@ -311,7 +314,7 @@ fi
 
 **Si la commande voulu est `show`** alors on va juste faire un ``cut`` dans le fichier `group` avec les même options vu précédemment.
 
-**Si la commande voulu est `addto`** alors on va utiliser la commande `gpasswd` (lien [ici](./new_command.md)) avec l'options `-a` (correspond à `add`) qui va permettre d'ajouter un utilisateur à un certains groupe.
+**Si la commande voulu est `addto`** alors on va utiliser la commande `gpasswd` (lien [ici](https://github.com/kevinniel/resources/blob/master/Cours/linux/utilisateurs_et_groupes.md#commandes)) avec l'options `-a` (correspond à `add`) qui va permettre d'ajouter un utilisateur à un certains groupe.
 
 **:floppy_disk: La commande ``sudo gpasswd -a $2 $grpname`` va ajouter (grâce à l'option ``-a``) un utilisateur dont le nom est placé dans la variable ``$2`` (qui est le nom choisi au tout début) dans le groupe dont le nom est placé dans la variable `grpname`.**
 
@@ -330,8 +333,8 @@ then
 	sudo passwd $2
 elif [ $nbrmodify = 3 ]
 then
-	read -p "Entrez comme ceci 'nouvel_identifiant identifiant_à_changer' : " newid oldid
-	sudo usermod --login $newid --home /home/$newid --move-home $oldid
+	read -p "Entrez le nouvelle identifiant : " newid oldid
+	sudo usermod --login $newid --home /home/$newid --move-home $2
 else
 	echo "Le numéro n'est pas valide"
 fi
@@ -339,15 +342,29 @@ fi
 
 Le **chiffre 2** renvoit ici à la modification du mot de passe.
 
-La commande ``passwd`` (lien [ici](./new_command.md)) sert à changer le mot de passe d'un utilisateur.
+La commande ``passwd`` (lien [ici](https://github.com/kevinniel/resources/blob/master/Cours/linux/utilisateurs_et_groupes.md#commandes)) sert à changer le mot de passe d'un utilisateur.
 
 **:floppy_disk: Avec la commande `sudo passwd $2`, on change le *mot de passe* de l'utilisateur dont le nom est placé dans la variable `$2`** 
 
 
 Le **chiffre 3** renvoit ici à la modification du nom d'utilisateur.
 
-On demande d'abord à l'utilisateur (grâce à `read`) le nouveau nom d'utilisateur (placé dans la variable `newid`) et le nom de l'utilisateur que l'on veut changer (placé dans la variable `oldid`).
+On demande d'abord à l'utilisateur (grâce à `read`) le nouveau nom d'utilisateur (placé dans la variable `newid`).
 
-Ensuite on utilise la commande ``usermod`` qui va permettre, grâce aux options choisi, de **changer le nom** ainsi que l'emplacement du **dossier utilisateur**.
+Ensuite on utilise la commande ``usermod`` (voir [ici](./new_command.md) cette nouvelle commande ) qui va permettre, grâce aux options choisi, de **changer le nom** (avec ``--login``) ainsi que l'emplacement du **dossier utilisateur** (avec ``--home``). L'option `--move-home` sert à dire qu'elle était l'ancien nom d'utilisateur.
 
 **:floppy_disk: Avec la commande `sudo usermod --login $newid --home /home/$newid --move-home $oldid`, on change le *nom d'utilisateur* ainsi que l'emplacement du *dossier utilisateur* (dont le nom est placé dans la variable `$2`) par un nouveaux noms (qui est placé dans la variable $newid)**
+
+Le `else` sert dans le cas où l'utilisateur a saisie une mauvaise commande.
+
+### Pour finir...
+
+```bash
+else
+	echo "La commande n'est pas valide, veuillez réessayer..."
+fi
+```
+
+Le dernier `else` sert dans le cas où l'utilisateur a saisie une mauvaise commande.
+
+Le script pourrait être plus complet mais, comme dit précédemment, on a un temps limité. J'ai donc choisi de faire les commandes les plus importantes.

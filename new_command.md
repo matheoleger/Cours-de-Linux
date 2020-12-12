@@ -220,3 +220,140 @@ ou
 ```bash
 $ export VAR=value
 ```
+
+## La commande `cut`
+
+La commande ``cut`` permet d'afficher des zones spécifiques d'un fichier en coupant les parties inintéressantes. 
+
+Elle se forme comme ceci : `cut -<option> <chemin_du_fichier>`
+
+Il y a plein de petite options mais les 3 principales sont :
+- `-d` : permet de choisir un séparateur de champs
+- `-c` : permet de choisir une colonne ou une plage de colonne
+- `-f` : permet de choisir le nombre de champs qui seront récupéré, il est utilisé avec `-d` qui va déterminer la fin d'un champs.
+
+Voici des exemples pour mieux comprendre :
+
+On a un fichier `test.txt` qui contient :
+
+```html
+ligne 1 : c'est
+ligne 2 : un
+ligne 3 : test
+ligne 4 : de
+ligne 5 : la
+ligne 6 : commande
+ligne 7 : nommé
+ligne 8 : cut
+ligne 9 : vraiment
+ligne 10 : pratique
+```
+Si l'on veut récupérer que la première colonne (c'est-à-dire le permier caractère de chaque ligne) on fait :
+
+```bash
+cut -c1 test.txt
+```
+Ce qui va donner :
+
+```bash
+l
+l
+l
+l
+l
+l
+l
+l
+l
+l
+l
+```
+On peut aussi récupérer plusieurs colonnes :
+
+```bash
+cut -c8- test.txt
+```
+Ce qui va donner :
+
+```html
+c'est
+un
+test
+de
+la
+commande
+nommé
+cut
+vraiment
+ pratique
+```
+On peut aussi faire des champs par exemple `-c1-5` (qui aurait afficher que les 5 premiers caractère de chaque ligne) ou alors `-c1-5,8-10`(qui aurait afficher que les 5 premiers caractère de chaque ligne ainsi que les caractère de 8 à 10 de chaque ligne)
+
+Maintenant on va tester l'utilisation du `-d` et du `-f` :
+
+Toujours avec le même fichier ``test.txt`` On fait :
+
+```bash
+cut -d: -f2 test.txt
+```
+Ce qui va donner :
+
+```html
+ c'est
+ un
+ test
+ de
+ la
+ commande
+ nommé
+ cut
+ vraiment
+ pratique
+```
+
+Le séparateur est ici ":" définit avec ``-d`` et on prend le 2ème champs (donc ce qui sera après les ":" ) avec `-f2`.
+
+
+## La commande `getent`
+
+> La  commande  ``getent``  affiche  les  entrées  des bases de données prises en charge par les bibliothèques du Name Service Switch (NSS). [Manpages Ubuntu](http://manpages.ubuntu.com/manpages/trusty/fr/man1/getent.1.html)
+
+Le but de cette commande est de récupéré une ou plusieurs informations sur quelque chose en particulier. On ne va pas détailler beaucoup cette commande car elle est très complète, elle fonctionne sous forme de base de donnée c'est-à-dire que la commande fera des choses différentes selon ce que vous cherchez.
+
+Elle se note : `getent <base_de_donnée> <clé>`
+
+Le seul exemple que je peux donnée c'est celui-ci :
+
+```bash
+getent passwd username
+```
+En sortie :
+
+```html
+username:x:1000:1000::/home/username/:bin/sh
+```
+Elle ressort la ligne du fichier ``passwd`` qui est relative à la "clé" donnée qui est le nom d'utilisateur ``username``.
+
+## La commande `usermod`
+
+Cette commande est vraiment pratique pour la gestion d'utilisateur.
+
+En effet, elle permet de faire beaucoup de chose donc je vous conseille de taper la commande ``man usermod`` dans votre terminal pour en savoir plus sur le fonctionnement.
+
+Ce qu'on peut retenir principalement :
+- modification du **nom d'utilisateur**
+- modification du **dossier utilisateur**
+- modification du **shell utilisé**
+- modification du **mot de passe**
+- modification du **groupe**
+- ...
+
+Il y a beaucoup de chose possible...
+
+Voici un exemple qui permet de changer le **nom d'utilisateur** ainsi que le **dossier utilisateur** :
+
+```bash
+sudo usermod --login new_user_name --home /home/new_user_name --move-home old_user_name
+```
+
+le nom d'utilisateur `old_user_name` est modifié ainsi que le dossier utilisateur pour être remplacé par `new_user_name`.
