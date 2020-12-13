@@ -34,7 +34,7 @@ Le fichier est composé de 2 choses :
 
 - `echo`: [Explication ici](./new_command.md) (dans le fichier des nouvelles commandes).
 
-#### Execution du script (+ définition des droits)
+#### Exécution du script (+ définition des droits)
 
 Maintenant que notre script est écrit, on peut l'executer.
 Afin d'executer un programme il faut faire comme ceci :

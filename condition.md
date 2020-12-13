@@ -5,16 +5,22 @@
 ----
 
 #### Dans cette partie, nous allons voir pas mal de chose :
-#### - [Les conditions basiques `if`, ``else``, ``elif``](./condition#les-conditions-basiques)
-#### - [Les tests](./condition#les-tests)
-
+- [Les conditions basiques `if`, ``else``, ``elif``](./condition.md#les-conditions-basiques)
+    -  [la condition `if`](./condition.md#la-condition-if)
+    -  [la condition `else`](./condition.md#la-condition-else)
+    -  [la condition `elif`](./condition.md#la-condition-elif)
+- [Les tests](./condition.md#les-tests)
+    - [tests sur des chaines de caractères](./condition.md#tests-sur-des-chaines-de-caratères)
+    - [tests sur des nombres](./condition.md#tests-sur-des-nombres)
+    - [tests sur des fichiers](./condition.md#tests-sur-des-fichiers)
+    - [Opérateurs logiques](./condition.md#opérateurs-logiques)
 
 ---
 ## Les conditions basiques
 
 Dans un premier temps, on va voir comment se forme les conditions en `bash`.
 
-### la condition ``if``
+### La condition ``if``
 
 On utilise globalement le `if` qui est la base des conditions.
 
@@ -61,7 +67,7 @@ fi                              # FIN de la condition
 
 Les commentaires expliquent le fonctionnement de la condition.
 
-### la condition `else`
+### La condition `else`
 
 La condition ``if`` à elle toute seule ne suffit pas forcément. En effet, on peut être ammené dans certains cas à vouloir faire quelque chose si ***le test*** n'a pas marché.
 
@@ -118,7 +124,7 @@ Ce n'est pas un douze
 $
 ```
 
-### la condition `elif`
+### La condition `elif`
 
 On peut aussi ajouter des ``SINON SI`` qui vont eux permettrent d'avoir une condition que si la condition précédente n'est pas bonne.
 
@@ -205,7 +211,7 @@ D'après eux, il y a trois types de tests différents en bash :
 À noter que toutes les variables sont par défaut considéré comme des chaines de caractères. 
 
 
-### Test sur des chaines de caractères
+### Tests sur des chaines de caractères
 
 | Conditions            |Significations                |
 |--------            |-------------                 |
@@ -341,5 +347,85 @@ $
 ```bash
 $ ./test.sh quoi
 Le fichier n'existe pas !
+$
+```
+### Opérateurs logiques
+
+Pour faire plusieurs tests, on peut se servir des opérateurs logiques ``&&`` et ``||``
+
+| Opérateur            |Significations                |
+|--------            |-------------                 |
+|`&&`| Correspond à "ET"|
+|`||`| Correspond à "OU"|
+|`!`| Correspond à "FALSE" (il permet d'inverser un test)|
+
+### Le ``&&`` et le ``||``
+
+Le ``ET`` et le ``OU`` permettent de faire plusieurs tests pour une même conditions.
+
+**Exemple :**
+
+Faisons un programme qui demande l'âge et la taille d'une personne pour savoir s'il peut rentrer dans le manège :
+
+```bash
+#!/bin/bash
+
+read -p "Quelle est votre âge et votre taille svp ? " age taille
+
+if [ age -ge 10 ] && [ taille -ge 160 ]
+then
+    echo "Vous pouvez rentrer !"
+else
+    echo "Désolé mais vous ne pouvez pas rentrer ?"
+fi
+```
+Ici, on vérifie si l'*âge* est **supérieur ou égale** à *10* **ET** si la *taille* est **supérieur ou égale** à *160*
+
+En sortie :
+
+Si l'**âge** est de *10* et la **taille** de *160* :
+
+```bash
+$ ./test.sh
+Quelle est votre âge et votre taille svp ? 10 160
+Vous pouvez rentrer !
+$
+```
+Ici l'âge et la taille sont bon.
+
+Si l'**âge** est de *9* et la **taille** de *160* :
+
+```bash
+$ ./test.sh
+Quelle est votre âge et votre taille svp ? 9 160
+Vous pouvez rentrer !
+$
+```
+Ici l'âge n'est pas bon mais la taille était bonne. Malheureusement comme il y a **un des 2 éléments** vérifiés qui **n'est pas bon**, alors la personne **ne peut pas aller** dans le manège.
+
+On aurait aussi pu remplacer le ``&&`` par ``||`` pour faire en sorte que **SI** l'**une des deux** conditions est **bonne**, alors la personne **aurait pu aller** dans le manège.
+
+### Le `!`
+
+On peut aussi inverser un test avec le `!`.
+
+Exemple :
+
+```bash
+#!/bin/bash
+
+if [ ! -d $1 ]
+then
+    echo "Ceci n'est pas un répertoire"
+else
+    echo "Ceci est un répertoire"
+fi
+```
+
+En sortie :
+
+```bash
+$ ./test.sh test.sh
+Ceci n'est pas un répertoire
 $
 ```
