@@ -1,4 +1,4 @@
-# Exemple n°1 : Scripts de gestion des comptes utilisateurs
+# Exemple n°1 : Scripts de gestion des comptes utilisateurs (lien du [script](./Ressources/Scripts/user_gestion.sh))
 
 >Faire un script de gestion des utilisateurs, qui doit permettre :
 >  - de créer des utilisateurs
