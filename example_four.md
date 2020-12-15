@@ -349,3 +349,47 @@ then
 ```
 
 On utilise encore la commande `sed`, mais cette fois-ci pour **supprimer** une ligne (donc un contact). Pour ce faire on fait : `/$2/d`, il faut spécifier une chose qui fera référence à la ligne, ici c'est bien entendu le nom placé dans ``$2`` et avec le `/d` on supprime la ligne correspondante (comme d'habitude : `annuaire.txt` pour spécifier le fichier).
+
+### La commande `phone_book.sh info <contact_name>`
+
+```bash
+elif [ $1 = info ]
+	then
+		name=$(sed -n "/$2/p" annuaire.txt | cut -d: -f1)
+		mail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)
+		num=$(sed -n "/$2/p" annuaire.txt | cut -d: -f3)
+		echo -e "NOM : $name \nE-MAIL : $mail \nTEL : $num"
+[...]
+```
+
+Là encore, je me suis un peu compliqué la tâche. Car, j'aurais simplement pu afficher la ligne sous la forme `nom:adresse:numéro` mais j'ai préféré l'afficher sous une forme plus agréable à lire.
+
+Par conséquent, je place chaque valeur dans des variables (en faisant la même méthode que vu précédemment). Donc pour chaque ligne je récupère la ligne qui m'intéresse grâce à `sed` puis je découpe grâce à `cut`.
+
+Une fois chaque élément récupéré, je les prints  avec `echo`. Le `-e` me permet d'utiliser le `\n` qui va permettre un retour à la ligne.
+
+### La commande `phone_book.sh find <element>`
+
+La dernière commande doit permettre de retrouver, grâce au numéro ou à l'adresse, le nom du contact.
+
+```bash
+elif [ $1 = find ]
+then
+	sed -n "/$2/p" annuaire.txt | cut -d: -f1
+```
+Exactement la même ligne que pour la variable ``name`` dans la partie `info`. La seule différence est qu'à la place du nom dans ``$2`` on a soit l'**adresse mail** soit le **numéro**.
+
+### Pour finir...
+
+```bash
+		else
+		echo "Mauvaise commande..."
+	fi
+else
+    echo "Mauvaise commande..."
+fi
+[...]
+```
+On termine avec un ``else`` de façon à rendre le script plus propre et plus compréhensible pour l'utilisateur.
+
+Le script aurait pu être largement simplifié au niveau de la synthaxe (surtout avec l'utilisation de fonction qui aurait pu aider à la lisibilité.)
