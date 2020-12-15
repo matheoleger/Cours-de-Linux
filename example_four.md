@@ -65,7 +65,7 @@ then
 		if [ $vartomodif = nom ]
 		then
 			read -p "Nouveau nom : " changename
-			sed -i -e "/$2/ {s/$2/$changename/}" annuaire.txt
+			sed -i "s/$2/$changename/" annuaire.txt
 		elif [ $vartomodif = email ]
 		then
 			read -p "Nouvelle email : " changemail
@@ -199,7 +199,7 @@ then
 		if [ $vartomodif = nom ]
 		then
 			read -p "Nouveau nom : " changename
-			sed -i -e "/$2/ {s/$2/$changename/}" annuaire.txt
+			sed -i "s/$2/$changename/" annuaire.txt
 		elif [ $vartomodif = email ]
 		then
 			read -p "Nouvelle email : " changemail
@@ -242,7 +242,7 @@ if [ $1 = modify ]
 		if [ $vartomodif = nom ]
 		then
 			read -p "Nouveau nom : " changename
-			sed -i -e "/$2/ {s/$2/$changename/}" annuaire.txt
+			sed -i "s/$2/$changename/" annuaire.txt
 		elif [ $vartomodif = email ]
 		then
 			read -p "Nouvelle email : " changemail
@@ -256,4 +256,96 @@ if [ $1 = modify ]
 		fi
 [...]
 ```
+La partie `modify` est séparé en 3 parties :
+- modification du nom
+- modification de l'email
+- modification du numéro
 
+On demande en premier lieu ce que voudrait faire l'utilisateur :
+
+```bash
+if [ $1 = modify ]
+	then
+	echo "Modifier le nom / l'e-mail / le numéro ?"
+	read -p " Entrez 'nom', 'email' ou 'num' : " vartomodif
+[...]
+```
+Pour ce faire on va utiliser la commande `read`.
+
+Une fois la réponse obtenue dans la variable `vartomodif`, on ajoute 3 conditions pour vérifier laquelle valeur est à modifier :
+
+```bash
+		if [ $vartomodif = nom ] # si ce qui doit être modifier c'est le nom
+		then
+			read -p "Nouveau nom : " changename
+			sed -i "s/$2/$changename/" annuaire.txt
+		elif [ $vartomodif = email ] # si ce qui doit être modifier c'est l'adresse mail
+		then
+			read -p "Nouvelle email : " changemail
+			oldmail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)
+			sed -i -e "/$2/ {s/$oldmail/$changemail/}" annuaire.txt
+		elif [ $vartomodif = num ] # si ce qui doit être modifier c'est le numéro de téléphone
+		then
+			read -p "Nouveau numéro : " changenum
+			oldnum=$(sed -n "/$2/p" annuaire.txt | cut -d: -f3)
+			sed -i -e "/$2/ {s/$oldnum/$changenum/}" annuaire.txt 
+		fi
+[...]
+```
+Les trois conditions se ressemblent, la première est légèrement différente.
+
+#### Modification du nom
+
+```bash
+if [ $vartomodif = nom ]
+then
+	read -p "Nouveau nom : " changename
+	sed -i "s/$2/$changename/" annuaire.txt
+[...]
+```
+La première ligne est très simple : elle demande juste le nouveau nom afin de la placer dans une variable `changename`.
+
+La deuxième est plus compliqué, en effet on utilise une nouvelle commande qui est `sed` (voir [ici](./new_command.md#la-commande-sed)). Cette commande va, dans notre cas, permettre de modifier les informations d'une ligne en particulière.
+
+`sed -i -e "s/$2/$changename/" annuaire.txt` : le `-i` permet de faire en sorte que la modification se fasse sur le document. Puis `"s/$2/$changename/"` va faire une substitution, d'où le `s/` qui est le bout de la commande qui va "activer" cette fonctionnalité. La substitution permet de modifier le texte placé dans la variable ``$2`` en le remplacant par celui placé dans `$changename`. La partie `annuaire.txt` est le nom du document qu'il faut modifier.
+
+#### Modification de l'adresse mail ou du numéro
+
+Les 2 conditions sont quasiment identiques. Par conséquent je ne ferais le détails que d'une seule :
+
+```bash
+elif [ $vartomodif = email ] # si ce qui doit être modifier c'est l'adresse mail
+then
+	read -p "Nouvelle email : " changemail
+	oldmail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)
+	sed -i -e "/$2/ {s/$oldmail/$changemail/}" annuaire.txt
+[...]
+```
+Il y a toujours la commande `read` pour récuperer l'information qui change.
+
+Cette fois-ci, on a besoin de récupérér une valeur qui est l'ancienne adresse mail. En effet, on aurait pu faire plus simple en demandant simplement à l'utilisateur de redonner l'ancienne adresse. Mais je voulais que ce soit plus automatisé.
+
+Alors pour ce faire, il a fallut que l'on coupe la valeur que l'on cherche à modifier (dans le cas ici c'est l'adresse mail mais ça marche de la même façon pour le numéro de téléphone).
+
+`oldmail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)` cette ligne va nous permettre de récupérer cette ancienne adresse mail.
+
+Tout d'abord : ``var=$(lacommande)`` va permettre de récupérer dans une variable, la valeur retourner par la commande.
+
+Ensuite : `sed -n "/$2/p" annuaire.txt | cut -d: -f2` La commande se passe en 2 étapes, premièrement `sed -n "/$2/p" annuaire.txt` qui va récupérer la ligne précise de l'utilisateur que l'on veut modifier. En effet `-n` est un paramètre permettant de trouver la ligne correspondant au caractère se trouvant entre les guillemets : ``"/$2/p"``. Ici le ``$2`` est la variable contenant le lien du compte et ``/p`` va demandé de "print" la valeur (il ne print pas dans la console mais va juste récuperer la valeur se trouvant sur la ligne). Si on aurait mis `/=` au lieu de `/p` on aurait eu le numéro de la ligne.
+
+Puis ``cut -d: -f2`` qui va couper juste la partie qui nous intéresse sur la ligne (la ligne récupérer avec la commande précédente).
+
+**:floppy_disk: ``oldmail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)`` va placer dans la variable `oldmail`, la valeur récupérer avec les commandes `sed` et `cut` qui respectivement vont trouver la bonne ligne (puis la récupérer) et ensuite couper la partie intéressante de cette ligne.**
+
+Pour finir : On fait presque la même commande que pour le changement du nom, c'est-à-dire : `sed -i -e "/$2/ {s/$oldmail/$changemail/}" annuaire.txt`. Cette fois-ci le `-e` est présent car il sert à pouvoir mettre 2 commandes (les 2 qui sont dans les ""). `/$2/` sert à determiner la ligne et `{s/$oldmail/$changemail/}` sert à modifier l'ancienne adresse mail par celle qui a été entré précédemment par l'utilisateur.
+
+### La commande `phone_book.sh del <contact_name>`
+
+```bash
+elif [ $1 = del ] # Si la commande choisi est "del"
+then
+	sed -i "/$2/d" annuaire.txt
+[...]
+```
+
+On utilise encore la commande `sed`, mais cette fois-ci pour **supprimer** une ligne (donc un contact). Pour ce faire on fait : `/$2/d`, il faut spécifier une chose qui fera référence à la ligne, ici c'est bien entendu le nom placé dans ``$2`` et avec le `/d` on supprime la ligne correspondante (comme d'habitude : `annuaire.txt` pour spécifier le fichier).
