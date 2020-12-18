@@ -1,12 +1,27 @@
 # Les commandes principales du Shell
 
-###### Ayant déjà vu dans le cours les **commandes**, j'y mettrais les nouvelles commandes que nous n'avons pas vue précedemment.
+#### Ayant déjà vu dans le cours les **commandes**, j'y mettrais les nouvelles commandes que nous n'avons pas vue précedemment.
 
-##### Liens vers le fichier des commandes vues dans le cours : https://github.com/kevinniel/resources/blob/master/Cours/linux/commandes_generiques.md
+#### Liens vers le fichier des commandes vues dans le cours : https://github.com/kevinniel/resources/blob/master/Cours/linux/commandes_generiques.md
 
 -----
 
-### La commande ``echo``
+## Sommaire des commandes :
+
+- La commande [echo](./new_command.md#la-commande-echo)
+- La commande [su root](./new_command.md#la-commande-su-root)
+- La commande [read](./new_command.md#la-commande-read)
+- La commande [let](./new_command.md#la-commande-let)
+- La commande [env](./new_command.md#la-commande-env)
+- La commande [pwd](./new_command.md#la-commande-pwd)
+- La commande [export](./new_command.md#la-commande-export)
+- La commande [cut](./new_command.md#la-commande-cut)
+- La commande [getent](./new_command.md#la-commande-getent)
+- La commande [usermod](./new_command.md#la-commande-usermod)
+- La commande [sort](./new_command.md#la-commande-sort)
+- La commande [sed](./new_command.md#la-commande-sed)
+
+## La commande ``echo``
 
 `echo` est une commande qui va permettre d'afficher ce que l'on veut.
 
@@ -27,7 +42,7 @@ $
 ```
 -----
 
-### La commande ``su root``
+## La commande ``su root``
 
 Même si la commande `su` a déjà été vu dans le cours, il est important de savoir que grâce à cette commande, on peut passer en **mode root** (c'est-à-dire un utilisateur ayant tous les droits).
 
