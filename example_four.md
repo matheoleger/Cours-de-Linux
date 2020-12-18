@@ -11,8 +11,8 @@
 >
 >L'ensemble des informations devront être enregistrées dans un fichier texte
 
-#### Par manque de temps, cette exercice sera expliqué très brièvement (le script sera commenté et séparé en fonction de ce qu'il fait).
-#### À noter aussi que le script aurait pu être plus propre au  niveau de la structure (utilisation de fonctions auraient pu être intéressant)
+#### Par manque de temps, cet exercice sera expliqué très brièvement (le script sera commenté et séparé en fonction de ce qu'il fait).
+#### À noter aussi que le script aurait pu être plus propre au  niveau de la structure (utilisation de fonctions aurait pu être intéressante)
 
 ----
 
@@ -113,7 +113,7 @@ then
 	echo "phone_book.sh find <phone_number> : Retrouver le nom d'un contact"
 [...]
 ```
-Ici on retrouve l'explication du fonctionnement de chaque commande afin que l'utilisateur choisisse ce qu'il veut faire.
+Ici, on retrouve l'explication du fonctionnement de chaque commande afin que l'utilisateur choisisse ce qu'il veut faire.
 
 ## Deuxième partie : S'il y a 1 paramètre.
 
@@ -161,13 +161,13 @@ Il y a 2 commandes ne demandant qu'un seul paramètre.
 		fi
     [...]
 ```
-Ici, on va demander, dans un premier temps, **si la personne veut vraiment créer un contact** avec la commande `read -p " Voulez-vous commencer la création ?(oui/non)" continue` (ce sera pour éviter les mauvaises manipulations). On aurait d'ailleur pu le mettre à la fin afin de savoir s'il voulait vraiment confirmer les saisies précédentes.
+Ici, on va demander, dans un premier temps, **si la personne veut vraiment créer un contact** avec la commande `read -p " Voulez-vous commencer la création ?(oui/non)" continue` (ce sera pour éviter les mauvaises manipulations). On aurait d'ailleurs pu le mettre à la fin afin de savoir s'il voulait vraiment confirmer les saisies précédentes.
 
 Il y aura donc une vérification de **si la variable `continue` est égale à "oui"**.
 
 Si c'est le cas, alors on va lire, avec la commande `read` (voir [ici](./new_command.md#la-commande-read)) les différentes informations (qui seront placé dans les variables `name` `email` `phonenbr`).
 
-Puis grâce à la commande `echo "$name:$email:$phonenbr" >> annuaire.txt` on écrit la ligne correspondant au nouveau contact dans le document `annuaire.txt` sous la forme `nom:email:numéro`.
+Puis grâce à la commande `echo "$name:$email:$phonenbr" >> annuaire.txt`, on écrit la ligne correspondant au nouveau contact dans le document `annuaire.txt` sous la forme `nom:email:numéro`.
 
 ### La commande `phone_book.sh show`
 
@@ -180,11 +180,11 @@ Puis grâce à la commande `echo "$name:$email:$phonenbr" >> annuaire.txt` on é
 	fi
 [...]
 ```
-Ici, on va simplement faire la même chose que lors de l'[exemple n°1](./example_one.md), c'est-à-dire la commande `cut -d: -f1 annuaire.txt` (voir [ici](./new_command.md#la-commande-cut)) qui va garder que le premier champs avant le séparateur ":".
+Ici, on va simplement faire la même chose que lors de l'[exemple n°1](./example_one.md), c'est-à-dire la commande `cut -d: -f1 annuaire.txt` (voir [ici](./new_command.md#la-commande-cut)) qui va garder que le premier champ avant le séparateur ":".
 
 La commande `sort -d` (voir [ici](./new_command.md#la-commande-sort)) va servir à remettre dans l'ordre alphabétique (= ordre du dictionnaire d'où le ``-d``).
 
-**:floppy_disk: La ligne va dans un premier temps récuperer tous les premiers champs se trouvant avant le séparateur ":", *puis* va les remettres dans l'ordre alphabétique.**
+**:floppy_disk: La ligne va dans un premier temps récupérer tous les premiers champs se trouvant avant le séparateur ":", *puis* va les remettre dans l'ordre alphabétique.**
 
 ## Troisième partie : S'il y a 2 paramètres.
 
@@ -256,7 +256,7 @@ if [ $1 = modify ]
 		fi
 [...]
 ```
-La partie `modify` est séparé en 3 parties :
+La partie `modify` est séparée en 3 parties :
 - modification du nom
 - modification de l'email
 - modification du numéro
@@ -270,7 +270,7 @@ if [ $1 = modify ]
 	read -p " Entrez 'nom', 'email' ou 'num' : " vartomodif
 [...]
 ```
-Pour ce faire on va utiliser la commande `read`.
+Pour ce faire, on va utiliser la commande `read`.
 
 Une fois la réponse obtenue dans la variable `vartomodif`, on ajoute 3 conditions pour vérifier laquelle valeur est à modifier :
 
@@ -305,13 +305,13 @@ then
 ```
 La première ligne est très simple : elle demande juste le nouveau nom afin de la placer dans une variable `changename`.
 
-La deuxième est plus compliqué, en effet on utilise une nouvelle commande qui est `sed` (voir [ici](./new_command.md#la-commande-sed)). Cette commande va, dans notre cas, permettre de modifier les informations d'une ligne en particulière.
+La deuxième est plus compliquée, en effet, on utilise une nouvelle commande qui est `sed` (voir [ici](./new_command.md#la-commande-sed)). Cette commande va, dans notre cas, permettre de modifier les informations d'une ligne en particulière.
 
-`sed -i -e "s/$2/$changename/" annuaire.txt` : le `-i` permet de faire en sorte que la modification se fasse sur le document. Puis `"s/$2/$changename/"` va faire une substitution, d'où le `s/` qui est le bout de la commande qui va "activer" cette fonctionnalité. La substitution permet de modifier le texte placé dans la variable ``$2`` en le remplacant par celui placé dans `$changename`. La partie `annuaire.txt` est le nom du document qu'il faut modifier.
+`sed -i -e "s/$2/$changename/" annuaire.txt` : le `-i` permet de faire en sorte que la modification se fasse sur le document. Puis `"s/$2/$changename/"` va faire une substitution, d'où le `s/` qui est le bout de la commande qui va "activer" cette fonctionnalité. La substitution permet de modifier le texte placé dans la variable ``$2`` en le remplaçant par celui placé dans `$changename`. La partie `annuaire.txt` est le nom du document qu'il faut modifier.
 
 #### Modification de l'adresse mail ou du numéro
 
-Les 2 conditions sont quasiment identiques. Par conséquent je ne ferais le détails que d'une seule :
+Les 2 conditions sont quasiment identiques. Par conséquent, je ne ferais le détail que d'une seule :
 
 ```bash
 elif [ $vartomodif = email ] # si ce qui doit être modifier c'est l'adresse mail
@@ -321,23 +321,23 @@ then
 	sed -i -e "/$2/ {s/$oldmail/$changemail/}" annuaire.txt
 [...]
 ```
-Il y a toujours la commande `read` pour récuperer l'information qui change.
+Il y a toujours la commande `read` pour récupérer l'information qui change.
 
-Cette fois-ci, on a besoin de récupérér une valeur qui est l'ancienne adresse mail. En effet, on aurait pu faire plus simple en demandant simplement à l'utilisateur de redonner l'ancienne adresse. Mais je voulais que ce soit plus automatisé.
+Cette fois-ci, on a besoin de récupérer une valeur qui est l'ancienne adresse mail. En effet, on aurait pu faire plus simple en demandant simplement à l'utilisateur de redonner l'ancienne adresse. Mais je voulais que ce soit plus automatisé.
 
-Alors pour ce faire, il a fallut que l'on coupe la valeur que l'on cherche à modifier (dans le cas ici c'est l'adresse mail mais ça marche de la même façon pour le numéro de téléphone).
+Alors pour ce faire, il a fallu que l'on coupe la valeur que l'on cherche à modifier (dans le cas, ici, c'est l'adresse mail, mais ça marche de la même façon pour le numéro de téléphone).
 
 `oldmail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)` cette ligne va nous permettre de récupérer cette ancienne adresse mail.
 
 Tout d'abord : ``var=$(lacommande)`` va permettre de récupérer dans une variable, la valeur retourner par la commande.
 
-Ensuite : `sed -n "/$2/p" annuaire.txt | cut -d: -f2` La commande se passe en 2 étapes, premièrement `sed -n "/$2/p" annuaire.txt` qui va récupérer la ligne précise de l'utilisateur que l'on veut modifier. En effet `-n` est un paramètre permettant de trouver la ligne correspondant au caractère se trouvant entre les guillemets : ``"/$2/p"``. Ici le ``$2`` est la variable contenant le lien du compte et ``/p`` va demandé de "print" la valeur (il ne print pas dans la console mais va juste récuperer la valeur se trouvant sur la ligne). Si on aurait mis `/=` au lieu de `/p` on aurait eu le numéro de la ligne.
+Ensuite : `sed -n "/$2/p" annuaire.txt | cut -d: -f2` La commande se passe en 2 étapes, premièrement `sed -n "/$2/p" annuaire.txt` qui va récupérer la ligne précise de l'utilisateur que l'on veut modifier. En effet `-n` est un paramètre permettant de trouver la ligne correspondant au caractère se trouvant entre les guillemets : ``"/$2/p"``. Ici le ``$2`` est la variable contenant le lien du compte et ``/p`` va demander de "print" la valeur (il ne print pas dans la console, mais va juste récupérer la valeur se trouvant sur la ligne). Si on avait mis `/=` au lieu de `/p` on aurait eu le numéro de la ligne.
 
-Puis ``cut -d: -f2`` qui va couper juste la partie qui nous intéresse sur la ligne (la ligne récupérer avec la commande précédente).
+Puis ``cut -d: -f2`` qui va couper juste la partie qui nous intéresse sur la ligne (la ligne récupérée avec la commande précédente).
 
 **:floppy_disk: ``oldmail=$(sed -n "/$2/p" annuaire.txt | cut -d: -f2)`` va placer dans la variable `oldmail`, la valeur récupérer avec les commandes `sed` et `cut` qui respectivement vont trouver la bonne ligne (puis la récupérer) et ensuite couper la partie intéressante de cette ligne.**
 
-Pour finir : On fait presque la même commande que pour le changement du nom, c'est-à-dire : `sed -i -e "/$2/ {s/$oldmail/$changemail/}" annuaire.txt`. Cette fois-ci le `-e` est présent car il sert à pouvoir mettre 2 commandes (les 2 qui sont dans les ""). `/$2/` sert à determiner la ligne et `{s/$oldmail/$changemail/}` sert à modifier l'ancienne adresse mail par celle qui a été entré précédemment par l'utilisateur.
+Pour finir : On fait presque la même commande que pour le changement du nom, c'est-à-dire : `sed -i -e "/$2/ {s/$oldmail/$changemail/}" annuaire.txt`. Cette fois-ci, le `-e` est présent, car il sert à pouvoir mettre 2 commandes (les 2 qui sont dans les ""). `/$2/` sert à déterminer la ligne et `{s/$oldmail/$changemail/}` sert à modifier l'ancienne adresse mail par celle qui a été entrée précédemment par l'utilisateur.
 
 ### La commande `phone_book.sh del <contact_name>`
 
@@ -362,11 +362,11 @@ elif [ $1 = info ]
 [...]
 ```
 
-Là encore, je me suis un peu compliqué la tâche. Car, j'aurais simplement pu afficher la ligne sous la forme `nom:adresse:numéro` mais j'ai préféré l'afficher sous une forme plus agréable à lire.
+Là encore, je me suis un peu compliqué la tâche. Car j'aurais simplement pu afficher la ligne sous la forme `nom:adresse:numéro`, mais j'ai préféré l'afficher sous une forme plus agréable à lire.
 
-Par conséquent, je place chaque valeur dans des variables (en faisant la même méthode que vu précédemment). Donc pour chaque ligne je récupère la ligne qui m'intéresse grâce à `sed` puis je découpe grâce à `cut`.
+Par conséquent, je place chaque valeur dans des variables (en faisant la même méthode que vu précédemment). Donc, pour chaque ligne, je récupère la ligne qui m'intéresse grâce à `sed` puis je découpe grâce à `cut`.
 
-Une fois chaque élément récupéré, je les prints  avec `echo`. Le `-e` me permet d'utiliser le `\n` qui va permettre un retour à la ligne.
+Une fois chaque élément récupéré, je les prints avec `echo`. Le `-e` me permet d'utiliser le `\n` qui va permettre un retour à la ligne.
 
 ### La commande `phone_book.sh find <element>`
 
@@ -392,4 +392,4 @@ fi
 ```
 On termine avec un ``else`` de façon à rendre le script plus propre et plus compréhensible pour l'utilisateur.
 
-Le script aurait pu être largement simplifié au niveau de la synthaxe (surtout avec l'utilisation de fonction qui aurait pu aider à la lisibilité.)
+Le script aurait pu être largement simplifié au niveau de la syntaxe (surtout avec l'utilisation de fonction qui aurait pu aider à la lisibilité).

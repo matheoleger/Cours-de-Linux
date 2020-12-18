@@ -4,7 +4,7 @@
 
 ----
 
-Il existe de types de boucle en bash (comme dailleur dans certains langages de programmation) :
+Il existe deux types de boucle en bash (comme d'ailleurs dans certains langages de programmation) :
 - Les boucles `while`
 - Les boucles `for`
 
@@ -101,6 +101,6 @@ Pour la vidéo il faut : stabilisateur
 Pour la vidéo il faut : trépied
 $
 ```
-On peut aussi affecter directement une variable qui contient plusieurs valeur à la place d'une suite de valeur. Cette variable peut par exemple être une commande qui retourne plusieurs valeurs.
+On peut aussi affecter directement une variable qui contient plusieurs valeurs à la place d'une suite de valeurs. Cette variable peut par exemple être une commande qui retourne plusieurs valeurs.
 
 

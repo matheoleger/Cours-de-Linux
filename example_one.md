@@ -12,12 +12,12 @@
 #### Il n'y a pas d'exemple mais on comprend rapidement le fonctionnement des commandes.
 ------
 
-#### Le script est plutôt chargé, par conséquent je vais le mettre en entier afin de montrer une vue d'ensemble puis expliquer partie par partie selon l'utilité des parties.
+#### Le script est plutôt chargé, par conséquent, je vais le mettre en entier afin de montrer une vue d'ensemble puis expliquer partie par partie selon l'utilité des parties.
 
 
-#### Je vais expliquer dans l'ordre du programme et non dans l'ordre des choses demandées
+#### Je vais expliquer dans l'ordre du programme et non dans l'ordre des choses demandées.
 
-#### À noter que quand il y a le signe :floppy_disk:, cela veut simplement dire que c'est un résumé de ce que fais la condition /la commande / la ligne. Donc si les explications détaillées sont trop longue, on peut juste lire les parties résumées.
+#### À noter que quand il y a le signe :floppy_disk:, cela veut simplement dire que c'est un résumé de ce que fait la condition /la commande / la ligne. Donc si les explications détaillées sont trop longues, on peut juste lire les parties résumées.
 
 -----
 

@@ -36,12 +36,12 @@ Le fichier est composé de 2 choses :
 
 #### Exécution du script (+ définition des droits)
 
-Maintenant que notre script est écrit, on peut l'executer.
-Afin d'executer un programme il faut faire comme ceci :
+Maintenant que notre script est écrit, on peut l'exécuter.
+Afin d'exécuter un programme il faut faire comme ceci :
 ```bash
 $ ./hello_world.sh
 ```
-On utilise le ``./`` pour lancer son programme. On peut aussi (surtout sur les gros programmes) utiliser ***l'execution de débogage*** en faisant la commande `bash -x lenomdufichier`
+On utilise le ``./`` pour lancer son programme. On peut aussi (surtout sur les gros programmes) utiliser ***l'exécution de débogage*** en faisant la commande `bash -x lenomdufichier`
 
 Exemple du ``hello_world.sh`` si cela fonctionnait :
 
@@ -52,7 +52,7 @@ Hello World!
 $
 ```
 
-Mais malheureusement dans notre cas, il y a un problème :
+Mais malheureusement, dans notre cas, il y a un problème :
 
 ```bash
 $ ./hello_world.sh
@@ -63,7 +63,7 @@ En effet, si on fait la commande `ls -l` on peut voir ceci :
 
 ![ls -l](./Ressources/ls-l.png)
 
-La ligne qui nous intéresse est celle en surbrillance c'est-à-dire la ligne du hello_world.sh.
+La ligne qui nous intéresse est celle en surbrillance, c'est-à-dire la ligne du hello_world.sh.
 
 Comme on peut le voir, il y a écrit `-rw-r--r--`. Cela correspond au droit que l'on possède sur le fichier.
 
@@ -73,12 +73,12 @@ Comme on a pu le voir sur le passage sur les [droits des fichiers](https://githu
 - ***w*** : pour *Write* (=Ecrire). Correspond au droit d'écriture.
 - ***x*** : pour *Execute* (=Executé). Correspond au droit d'execution.
 
-Donc si on veut avoir les droits d'execution, on peut faire:
+Donc si on veut avoir les droits d'exécution, on peut faire:
 
 - `chmod +x hello_world.sh` 
 - `chmod 755 hello_world.sh`
 
-Les 2 commandes font la même chose. C'est-à-dire **tous les droits** à l'**utilisateur propriétaire** et seulement le droit de **lecture** et d'**execution** pour le **reste des utilisateurs** et le groupe concerné. Ce qui donnera ceci `-rwxr-xr-x`.
+Les 2 commandes font la même chose. C'est-à-dire **tous les droits** à l'**utilisateur propriétaire** et seulement le droit de **lecture** et d'**exécution** pour le **reste des utilisateurs** et le groupe concerné. Ce qui donnera ceci `-rwxr-xr-x`.
 
 Voici le résultat du script:
 
@@ -91,15 +91,15 @@ Voilà, on a réussi notre premier script !
 
 C'est un script basique qui ne sert pas à grand chose. Mais on va pouvoir faire plein de chose très pratique et grâce aux exercices, on va voir la **vraie utilité** des **Scripts**.
 
-#### Execution du script de n'importe où
+#### Exécution du script de n'importe où
 
-On peut exécuter un fichier de n'importe où, mais pour ce faire il faut placer le fichier dans un endroit bien particulier.
+On peut exécuter un fichier de n'importe où, mais pour ce faire, il faut placer le fichier dans un endroit bien particulier.
 
-Il faut placer ou copier le script dans un de ces répertoires : ``/bin``, ``/usr/bin`` ou ``/usr/local/bin`` (ou un autre répertoire du **PATH**). Il est nécessaire d'être en mode **ROOT** pour déplacer le fichier dans les répertoire **PATH**.
+Il faut placer ou copier le script dans un de ces répertoires : ``/bin``, ``/usr/bin`` ou ``/usr/local/bin`` (ou un autre répertoire du **PATH**). Il est nécessaire d'être en mode **ROOT** pour déplacer le fichier dans les répertoires **PATH**.
 
-Si jamais on veut trouver un autre répertoire du **PATH**, on peut faire la commande `echo $PATH`. Elle affichera toutes les répertoires du PATH.
+Si jamais on veut trouver un autre répertoire du **PATH**, on peut faire la commande `echo $PATH`. Elle affichera tous les répertoires du PATH.
 
-Une fois déplacer, il suffira d'utiliser la commande `nomdufichier.sh`
+Une fois déplacé, il suffira d'utiliser la commande `nomdufichier.sh`
 
 **Exemple**
 

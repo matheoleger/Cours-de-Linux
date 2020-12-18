@@ -201,6 +201,11 @@ let "multiplication = premier * deuxieme"     #pas besoin de $ (sauf si on utili
 echo $multiplication
 ```
 
+On peut aussi se servir d'une commande qui a l'aire moins répendu : ``expr``
+
+Cette commande fonctionne presque pareil mais la différence est qu'elle sert surtout pour faire les calculs directement.
+
+Voir [cette page](https://www.quennec.fr/trucs-astuces/syst%C3%A8mes/gnulinux/programmation-shell-sous-gnulinux/les-bases-de-la-programmation-shell/larithm%C3%A9tique/la-commande-expr) pour plus d'information
 ## Les variables des paramètres
 
 On peut ajouter des paramètres après la commande pour lancer le programme, comme ceci :

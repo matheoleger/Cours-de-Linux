@@ -22,7 +22,7 @@ Voici ce qui apparait une fois la commande tapée :
 
 ![nano](./Ressources/nano_fenetre_editer.png)
 
-C'est tout simplement un éditeur donc on peut écrire ce qu'on (dans le cas d'un fichier ".sh" on veut faire un script).
+C'est tout simplement un éditeur donc on peut écrire ce que l'on veut (dans le cas d'un fichier ".sh" on veut faire un script).
 
 Comme on peut le voir en bas de la page d'édition, il y a certaines des commandes que l'on peut faire.
 
@@ -41,6 +41,8 @@ Quelques commandes pratiques :
 - ***Ctrl + K*** : couper du texte (pour sélectionner c'est *Shift + flèche* dans la direction que l'on veut sélectionner)
 
 - ***Ctrl + U*** : coller du texte
+
+- ***Alt + U*** : Annuler la dernière modification.
 
 ## Editer un fichier avec `vi`
 
@@ -132,4 +134,4 @@ Tout d'abord, voici la manière de comprendre ce que j'écris :
 - `l` : déplacement vers la droite.
 - `h` : déplacement vers la gauche.
 
-Il y a encore plein de commande mais je trouve que ce sont les plus importantes. Voici le lien d'une [vidéo](https://www.youtube.com/watch?v=UIUg2Ktwccw&t) ainsi que d'un [site ](http://wiki.linux-france.org/wiki/Utilisation_de_vi) très pratique qui permettent de mieux comprendre le fonctionnement de `vi`.
+Il y a encore plein de commandes, mais je trouve que ce sont les plus importantes. Voici le lien d'une [vidéo](https://www.youtube.com/watch?v=UIUg2Ktwccw&t) ainsi que d'un [site ](http://wiki.linux-france.org/wiki/Utilisation_de_vi) très pratique qui permettent de mieux comprendre le fonctionnement de `vi`.

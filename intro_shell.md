@@ -19,8 +19,8 @@ On va s'intéresser à la première forme : **l'interface en ligne de commande**
 
 Comme son nom l'indique, cela va permettre à l'utilisateur de **communiquer** via du texte avec la machine (et inversement). Mais pour que les commandes soient reconnues, on a besoin d'un **interpréteur de commande** (*CLI = command-line interpreter*).
 
-Ils existent différents interpréteurs de commandes selon l'OS utilisé:
-- Sous Windows, le logiciel d'interprétation des commandes est le `cmd.exe` mais depuis quelques années, il existe un 2ème interpréteur de commande qui est le `powershell.exe`
+Ils existent différents interpréteurs de commandes selon l'OS utilisé :
+- Sous Windows, le logiciel d'interprétation des commandes est le `cmd.exe`, mais depuis quelques années, il existe un deuxième interpréteur de commande qui est le `powershell.exe`
 - Sous Linux, les interpréteur de commandes sont les `shells Unix` (ils en existent beaucoup, exemples : sh / bash / etc....)
 - Sous Mac, c'est simplement le `terminal`
 
@@ -33,9 +33,9 @@ Pour résumé, un shell Unix va permettre d'**interpréter** les **commandes don
 
 Il existe différents shells Unix, voici les plus connus:
 - ***sh*** : signifie *Bourne Shell*. Le premier interpréteur de commande qui est à l'origine des autres.
-- ***bash*** : signifie *Bourne Again Shell*. Fondé sur le *Bourne Shell* mais plus complet (notamment en reprennant des éléments du ksh et du csh). Disponible par défaut sur les systèmes Linux et Mac OS.
 - ***ksh*** : signifie *Korn Shell*. Compatible avec *bash* et il possède un grand nombre de fonctionnalité.
 - ***csh*** : signifie *C Shell*. Elle a une synthaxe similaire au langage C.
+- ***bash*** : signifie *Bourne Again Shell*. Fondé sur le *Bourne Shell* mais plus complet (notamment en reprennant des éléments du ksh et du csh). Ce shell est le plus répandu et est utilisé par défaut sur Linux (et Mac OS)
 - ***tcsh*** : signifie *Tenex C Shell*. Une amélioration du *csh*.
 - ***zsh*** : signifie *Z Shell*. Il reprend la plupart des fonctions de bash, ksh et tcsh.
 
@@ -55,7 +55,7 @@ Un récapitulatif de l'histoire de ces shells, juste en dessous, dans la catégo
 
 > :bulb: Le terme anglais « shell » vient à l'origine de la terminologie employée avec les premiers systèmes d'exploitation de type Unix où il avait le sens plus spécifique de shell Unix. [Wikipédia](https://fr.wikipedia.org/wiki/Interface_syst%C3%A8me)
 
-Les différentes couches logicielles sont décrites par comparaison à une noix, avec son noyau et sa coque (pour accéder au noyau il faut passer par la coque. Comme dans le milieu informatique on doit passer par le shell pour communiquer avec le noyau).
+Les différentes couches logicielles sont décrites par comparaison à une noix, avec son noyau et sa coque (pour accéder au noyau il faut passer par la coque. Comme dans le milieu informatique, on doit passer par le shell pour communiquer avec le noyau).
 
 #### Histoire des principaux Shells Unix
 

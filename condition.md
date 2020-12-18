@@ -69,7 +69,7 @@ Les commentaires expliquent le fonctionnement de la condition.
 
 ### La condition `else`
 
-La condition ``if`` à elle toute seule ne suffit pas forcément. En effet, on peut être ammené dans certains cas à vouloir faire quelque chose si ***le test*** n'a pas marché.
+La condition ``if`` à elle toute seule ne suffit pas forcément. En effet, on peut être amené dans certains cas à vouloir faire quelque chose si ***le test*** n'a pas marché.
 
 Et pour cela on se sert de la condition `else` (qui signifie SINON)
 
@@ -126,7 +126,7 @@ $
 
 ### La condition `elif`
 
-On peut aussi ajouter des ``SINON SI`` qui vont eux permettrent d'avoir une condition que si la condition précédente n'est pas bonne.
+On peut aussi ajouter des ``SINON SI`` qui vont permettre d'avoir une condition que si la condition précédente n'est pas bonne.
 
 `elif` correspond donc à ``else if`` soit ``SINON SI``
 
@@ -201,14 +201,14 @@ $
 ```
 ## Les tests
 
-:warning: Toutes cette partie est fortement inspiré d'[Openclassrooms](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/43394-les-conditions#/id/r-43360). En effet, les tableaux qu'ils ont fait sont très pratique, par conséquent je me suis permis de faire la même chose.
+:warning: Toute cette partie est fortement inspirée d'[Openclassrooms](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/43394-les-conditions#/id/r-43360). En effet, les tableaux qu'ils ont faits sont très pratiques, par conséquent, je me suis permis de faire la même chose.
 
-D'après eux, il y a trois types de tests différents en bash :
-- tests sur des chaines de caractères
+D'après eux, il y a trois types de tests différents en ``bash`` :
+- tests sur des chaînes de caractères
 - tests sur des nombres
 - tests sur des fichiers
 
-À noter que toutes les variables sont par défaut considéré comme des chaines de caractères. 
+À noter que toutes les variables sont par défaut considérées comme des chaînes de caractères. 
 
 
 ### Tests sur des chaines de caractères
@@ -220,7 +220,7 @@ D'après eux, il y a trois types de tests différents en bash :
 |``-z $valeur``| Vérification de si la chaine est **vide**|
 |``-n $valeur``| Vérification de si la chaine n'est **pas vide**|
 
-:bulb: On parle bien ici de **chaine de caractère** donc il ne prendra pas en compte des calculs mathématiques. Exemple : `1+1 = 2` sera un **test faux** car la chaine de caractère ``1+1`` est **différente** de la chaine de caractère `2`. Nous verrons plus tard quelque chose qui fera un test de nombre.
+:bulb: On parle bien ici de **chaîne de caractère** donc il ne prendra pas en compte des calculs mathématiques. Exemple : `1+1 = 2` sera un **test faux**, car la chaîne de caractère ``1+1`` est **différente** de la chaîne de caractère `2`. Nous verrons plus tard quelque chose qui fera un test de nombre.
 
 **Exemples :**
 
@@ -263,7 +263,7 @@ La construction se fait comme ceci : ``$var1 -condition $var2``
 
 :bulb: Il y a une deuxième manière de faire les tests. En effet, on peut se servir des **doubles parenthèses** qui est dédié aux comparaisons arithmétiques : `==`, `!=`, `<`, `<=` etc...
 
-Elles vont permettre de ne pas utiliser "les mots cléfs", mais justement se servir directement des signes appropriés.
+Elles vont permettre de ne pas utiliser "les mots clefs", mais justement se servir directement des signes appropriés.
 
 **Exemples :**
 
@@ -316,7 +316,7 @@ Cela se construit par : `-condition $fichier`
 |--------            |-------------                 |
 |`-e`| Vérification de l'existence du fichier (**e**xistence)|
 |`-d`| Vérifie si le fichier est un répertoire (**d**irectory)|
-|`-f`| Vérifie si le ficheir est un fichier (**f**ile)|
+|`-f`| Vérifie si le fichier est un fichier (**f**ile)|
 |`-L`| Vérifie si le fichier est un lien symbolique (**l**ink)|
 |`-r`| Vérifie si le fichier est lisible (**r**ead)|
 |`-w`| Vérifie si le fichier est modifiable (**w**rite)|
@@ -351,7 +351,9 @@ $
 ```
 ### Opérateurs logiques
 
-Pour faire plusieurs tests, on peut se servir des opérateurs logiques ``&&`` et ``||``
+Pour faire plusieurs tests, on peut se servir des opérateurs logiques ``&&`` et ``||``.
+
+Il existe aussi le `!` qui permet d'inverser le test.
 
 | Opérateur            |Significations                |
 |--------            |-------------                 |
@@ -401,7 +403,7 @@ Quelle est votre âge et votre taille svp ? 9 160
 Vous pouvez rentrer !
 $
 ```
-Ici l'âge n'est pas bon mais la taille était bonne. Malheureusement comme il y a **un des 2 éléments** vérifiés qui **n'est pas bon**, alors la personne **ne peut pas aller** dans le manège.
+Ici, l'âge n'est pas bon mais la taille était bonne. Malheureusement, comme il y a **un des 2 éléments** vérifiés qui **n'est pas bon**, alors la personne **ne peut pas aller** dans le manège.
 
 On aurait aussi pu remplacer le ``&&`` par ``||`` pour faire en sorte que **SI** l'**une des deux** conditions est **bonne**, alors la personne **aurait pu aller** dans le manège.
 
