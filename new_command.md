@@ -590,7 +590,7 @@ nous
 $
 ```
 
-## Faire plusieurs commandes
+### Faire plusieurs commandes
 
 En effet, on peut faire plusieurs commandes en même temps.
 
